@@ -1,0 +1,23 @@
+{
+    "home" : {
+        "title": "Witamy na stronie"
+    },
+
+    "navigator": {
+        "main": "Panel główny",
+        "trainings": "Treningi",
+        "races": "Wyścigi",
+        "training-camps": "Zgrupowania",
+        "riders": "Zawodnicy",
+        "equipment": "Sprzęt"
+    },
+    "training" : {
+        "type": "Typ",
+        "date": "Data",
+        "kind": "Rodzaj",
+        "distance": "Dystans",
+        "description": "Opis"
+    }
+
+
+}

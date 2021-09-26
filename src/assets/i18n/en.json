@@ -1,0 +1,23 @@
+{
+    "home" : {
+        "title": "Welcom on our site"
+    },
+
+    "navigator": {
+        "main": "Main",
+        "trainings": "Trainings",
+        "races": "Races",
+        "training-camps": "Training Camps",
+        "riders": "Riders",
+        "equipment": "Equipment"
+    },
+
+    "training" : {
+        "type": "Type",
+        "date": "Date",
+        "kind": "Kind",
+        "distance": "Distance",
+        "description": "Description"
+    }
+
+}
