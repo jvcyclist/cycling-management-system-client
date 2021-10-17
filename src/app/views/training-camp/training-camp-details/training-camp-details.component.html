@@ -1,0 +1,25 @@
+{{ 'training-camp.preview' | translate }}
+
+<table>
+    <tr>
+        <td>{{'training-camp.id' | translate }}</td>
+        <td>{{trainingCamp.id}}</td>
+    </tr>
+    <tr>
+        <td>{{ 'training-camp.title' | translate }}</td>
+        <td>{{trainingCamp.title}}</td>
+    </tr>
+    <tr>
+        <td>{{ 'training-camp.startDate' | translate }}</td>
+        <td>{{trainingCamp.startDate | date}}</td>
+    </tr>
+    <tr>
+        <td>{{ 'training-camp.endDate' | translate }}</td>
+        <td>{{trainingCamp.endDate | date}}</td>
+    </tr>
+
+
+  </table>
+  <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+
+

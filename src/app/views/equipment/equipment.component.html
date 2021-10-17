@@ -1,1 +1,26 @@
-<p>equipment works!</p>
+<div style="position:absolute;">
+<button (click)="changeTo('Bikes')">{{'equipment.bikes' | translate}}</button>
+<button (click)="changeTo('Wheels')">{{'equipment.wheels' | translate}}</button>
+</div>  
+<table mat-table [dataSource]="particularEquipmentArray">
+
+    <ng-container matColumnDef="ref_no">
+           <th mat-header-cell *matHeaderCellDef> {{'equipment.ref_no' | translate}} </th>
+           <td mat-cell *matCellDef="let equipment"> {{equipment.ref_no }} </td>
+   </ng-container>
+   <ng-container matColumnDef="mark">
+       <th mat-header-cell *matHeaderCellDef> {{'equipment.mark' | translate}} </th>
+       <td mat-cell *matCellDef="let equipment"> {{equipment.mark}} </td>
+   </ng-container>
+   <ng-container matColumnDef="model">
+       <th mat-header-cell *matHeaderCellDef> {{'equipment.model' | translate}} </th>
+       <td mat-cell *matCellDef="let equipment"> {{equipment.model}} </td>
+   </ng-container>
+   <ng-container matColumnDef="type">
+       <th mat-header-cell *matHeaderCellDef> {{'equipment.type' | translate}} </th>
+       <td mat-cell *matCellDef="let equipment"> {{equipment.type}} </td>
+   </ng-container>
+   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+   <tr mat-row *matRowDef="let equipment; columns: columnsToDisplay"></tr>
+   
+   </table>

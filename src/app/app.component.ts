@@ -8,7 +8,6 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   title = 'cycling-management-system-client';
-
   supportLanguage = ['en', 'pl']
 
   constructor(private translateService: TranslateService){
@@ -22,5 +21,4 @@ export class AppComponent {
     this.translateService.use(lang);
   }
 
-  
 }

@@ -1,6 +1,10 @@
 {
     "home" : {
-        "title": "Welcom on our site"
+        "title": "Welcome on our site"
+    },
+
+    "common" : {
+        "actions": "Actions"
     },
 
     "navigator": {
@@ -18,6 +22,14 @@
         "kind": "Kind",
         "distance": "Distance",
         "description": "Description"
+    },
+    "equipment" : {
+        "ref_no" : "Ref. No",
+        "mark" : "Mark",
+        "model" : "Model",
+        "type" : "Type",
+        "bikes" : "Bikes",
+        "wheels" : "Wheels"
     }
 
 }

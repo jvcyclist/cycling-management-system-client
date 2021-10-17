@@ -12,7 +12,7 @@ export class TrainingComponent implements OnInit {
   trainingMock: TrainingMock = new TrainingMock();
   trainingArray: Training[] = this.trainingMock.trainings;
   
-  columnsToDisplay = ['id', 'date', 'type', 'kind', 'distance', 'description'];
+  columnsToDisplay = ['id', 'date', 'type', 'kind', 'distance', 'description', 'actions'];
 
   constructor() { }
 

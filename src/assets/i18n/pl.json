@@ -3,6 +3,14 @@
         "title": "Witamy na stronie"
     },
 
+    "common-actions" : {
+        "back" : "Powrót"
+    },
+    
+    "common" : {
+        "actions" : "Akcje"
+    },
+
     "navigator": {
         "main": "Panel główny",
         "trainings": "Treningi",
@@ -11,13 +19,54 @@
         "riders": "Zawodnicy",
         "equipment": "Sprzęt"
     },
+
     "training" : {
+        "id": "Id",
         "type": "Typ",
         "date": "Data",
         "kind": "Rodzaj",
         "distance": "Dystans",
-        "description": "Opis"
-    }
+        "description": "Opis",
+        "preview" : "Podgląd treningu"
+    },
 
+    "training-camp" : {
+        "id": "Id",
+        "title": "Nazwa",
+        "startDate": "Data rozp.",
+        "endDate": "Data zak.",
+        "preview" : "Podgląd zgrupowania"
+    },
+
+    "equipment" : {
+        "ref_no" : "Numer. Ref.",
+        "mark" : "Marka",
+        "model" : "Model",
+        "type" : "Typ",
+        "bikes" : "Rowery",
+        "wheels" : "Koła"
+    },
+    "rider" : {
+        "category" : "Kategoria",
+        "first_name" : "Imię",
+        "last_name" : "Nazwisko",
+        "license_no" : "Numer licencji"
+    },
+    
+    "race" : {
+        "id" : "Kategoria",
+        "title" : "Nazwa",
+        "startDate" : "Data rozp.",
+        "endDate" : "Data zak.",
+        "url" : "Strona web"
+    },
+
+    "rider-details" : {
+        "preview" : "Podgląd zawodnika",
+        "first-name" : "Imię",
+        "last-name" : "Nazwisko",
+        "category" : "Kategoria",
+        "license-no" : "Numer licencji"
+    }
 
 }

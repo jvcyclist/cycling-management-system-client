@@ -19,6 +19,12 @@ import { TrainingUpdateComponent } from './views/training/training-update.compon
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader"
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { NearestRacesComponent } from './views/nearest-races/nearest-races.component';
+import { RiderDetailsComponent } from './views/rider/rider-details/rider-details.component';
+import { TrainingCampDetailsComponent } from './views/training-camp/training-camp-details/training-camp-details.component';
+import { RaceDetailsComponent } from './views/race/race-details/race-details.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,7 +39,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     EquipmentComponent,
     ReportErrorComponent,
     RiderComponent,
-    TrainingCampComponent
+    TrainingCampComponent,
+    NearestRacesComponent,
+    RiderDetailsComponent,
+    TrainingCampDetailsComponent,
+    RaceDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +58,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
         useFactory: (http:HttpClient) => {return new TranslateHttpLoader(http, './assets/i18n/', '.json');},
         deps: [HttpClient]
       }
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
     })
   ],
   providers: [],
