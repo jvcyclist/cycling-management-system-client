@@ -56,4 +56,14 @@ export class RiderMock{
 
     ]
     
+    save(rider: Rider){ 
+        if (rider.id !== null){
+            this.riders[rider.id? rider.id - 1 : 0 - 1] = rider;
+        }
+        else {
+            rider.id = this.riders.length-1 ;
+            this.riders.push(rider)
+        }
+
+    }
 }

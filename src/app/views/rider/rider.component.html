@@ -1,5 +1,8 @@
-<table mat-table [dataSource]="riderArray">
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-info" routerLink="/riders/new">{{'common-actions.add' | translate}}</button>
+</div>
 
+<table mat-table [dataSource]="riderArray">
     <ng-container matColumnDef="category">
            <th mat-header-cell *matHeaderCellDef> {{'rider.category' | translate}} </th>
            <td mat-cell *matCellDef="let rider"> {{rider.category }} </td>
@@ -20,15 +23,10 @@
     <th mat-header-cell *matHeaderCellDef> {{'common.actions' | translate}} </th>
     <td mat-cell *matCellDef="let rider">
         <button routerLink="/rider/{{rider.id}}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-          </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><rect fill="none" height="24" width="24"/><path d="M3,10h11v2H3V10z M3,8h11V6H3V8z M3,16h7v-2H3V16z M18.01,12.87l0.71-0.71c0.39-0.39,1.02-0.39,1.41,0l0.71,0.71 c0.39,0.39,0.39,1.02,0,1.41l-0.71,0.71L18.01,12.87z M17.3,13.58l-5.3,5.3V21h2.12l5.3-5.3L17.3,13.58z"/></svg>
         </button>
-
     </td>
 </ng-container>
    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
    <tr mat-row *matRowDef="let rider; columns: columnsToDisplay"></tr>
-   
-   </table>
+</table>

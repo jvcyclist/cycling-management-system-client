@@ -25,6 +25,32 @@ import { TrainingCampDetailsComponent } from './views/training-camp/training-cam
 import { RaceDetailsComponent } from './views/race/race-details/race-details.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { EquipmentDetailsComponent } from './views/equipment/equipment-details/equipment-details.component';
+import { LoginComponent } from './views/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { RiderPersonalDataComponent } from './views/rider/rider-personal-data/rider-personal-data.component';
+import { RiderNavigationComponent } from './views/rider/rider-navigation/rider-navigation.component';
+import { RiderAddressComponent } from './views/rider/rider-address/rider-address.component';
+import { RiderAchievementsComponent } from './views/rider/rider-achievements/rider-achievements.component';
+import { RiderMedicalCardComponent } from './views/rider/rider-medical-card/rider-medical-card.component';
+import { RiderUpdateComponent } from './views/rider/rider-update/rider-update.component';
+
+
 
 @NgModule({
   declarations: [
@@ -43,7 +69,15 @@ import { environment } from '../environments/environment';
     NearestRacesComponent,
     RiderDetailsComponent,
     TrainingCampDetailsComponent,
-    RaceDetailsComponent
+    RaceDetailsComponent,
+    EquipmentDetailsComponent,
+    LoginComponent,
+    RiderPersonalDataComponent,
+    RiderNavigationComponent,
+    RiderAddressComponent,
+    RiderAchievementsComponent,
+    RiderMedicalCardComponent,
+    RiderUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +98,23 @@ import { environment } from '../environments/environment';
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

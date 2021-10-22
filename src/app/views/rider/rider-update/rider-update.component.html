@@ -1,0 +1,24 @@
+<br>
+{{ 'rider-details.preview' | translate }}
+<table>
+    <tr>
+        <td>{{ 'rider-details.category' | translate }}</td>
+        <td>
+            <input type="text" [(ngModel)]="rider.category">
+        </td>
+    </tr>
+    <tr>
+        <td>{{ 'rider-details.first-name' | translate }}</td>
+        <td><input type="text" [(ngModel)]="rider.first_name"></td>
+    </tr>
+    <tr>
+        <td>{{ 'rider-details.last-name' | translate }}</td>
+        <td><input type="text" [(ngModel)]="rider.last_name"></td>
+    </tr>
+    <tr>
+        <td>{{ 'rider-details.license-no' | translate }}</td>
+        <td><input type="text" [(ngModel)]="rider.license_no"></td>
+    </tr>
+</table>
+<button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+<button (click)="onSave()" type="button" class="btn btn-info">{{ 'common-actions.save' | translate }}</button>

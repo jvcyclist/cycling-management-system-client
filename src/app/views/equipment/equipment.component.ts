@@ -11,9 +11,9 @@ export class EquipmentComponent implements OnInit {
 
   equipmentMock: EquipmentMock = new EquipmentMock();
   equipmentArray: Equipment[] = this.equipmentMock.equipments;
-  particularEquipmentArray: Equipment[] = [];
+  particularEquipmentArray: Equipment[] = this.equipmentArray;
 
-  columnsToDisplay = ['ref_no', 'mark', 'model', 'type'];
+  columnsToDisplay = ['ref_no', 'mark', 'model', 'type', 'actions'];
 
   changeTo(equipmentType: string): void {
     switch(equipmentType) {
@@ -34,6 +34,7 @@ export class EquipmentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

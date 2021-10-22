@@ -1,5 +1,9 @@
 {{'home.title' | translate}}
-<button (click)="switchToLang('pl')">pl</button>
-<button (click)="switchToLang('en')">en</button>
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button (click)="switchToLang('pl')" type="button" class="btn btn-secondary">pl</button>
+    <button (click)="switchToLang('en')" type="button" class="btn btn-secondary">en</button>
+</div>
 <app-navigator></app-navigator>
-<router-outlet></router-outlet>
+<div>
+    <router-outlet></router-outlet>
+</div>

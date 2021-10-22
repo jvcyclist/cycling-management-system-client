@@ -1,7 +1,10 @@
-<div style="position:absolute;">
-<button (click)="changeTo('Bikes')">{{'equipment.bikes' | translate}}</button>
-<button (click)="changeTo('Wheels')">{{'equipment.wheels' | translate}}</button>
-</div>  
+<div class="btn-group" role="group" aria-label="Basic example" style="position: relative;">
+    <button (click)="changeTo('Wheels')" type="button" class="btn btn-secondary">{{'equipment.wheels' | translate}}</button>
+    <button (click)="changeTo('Bikes')" type="button" class="btn btn-secondary">{{'equipment.bikes' | translate }}</button>
+</div>
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-info">{{'common-actions.add' | translate}}</button>
+</div>
 <table mat-table [dataSource]="particularEquipmentArray">
 
     <ng-container matColumnDef="ref_no">
@@ -20,7 +23,14 @@
        <th mat-header-cell *matHeaderCellDef> {{'equipment.type' | translate}} </th>
        <td mat-cell *matCellDef="let equipment"> {{equipment.type}} </td>
    </ng-container>
+   <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> {{'common.actions' | translate}} </th>
+    <td mat-cell *matCellDef="let equipment">
+        <button routerLink="/equipment/{{equipment.id}}">
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><rect fill="none" height="24" width="24"/><path d="M3,10h11v2H3V10z M3,8h11V6H3V8z M3,16h7v-2H3V16z M18.01,12.87l0.71-0.71c0.39-0.39,1.02-0.39,1.41,0l0.71,0.71 c0.39,0.39,0.39,1.02,0,1.41l-0.71,0.71L18.01,12.87z M17.3,13.58l-5.3,5.3V21h2.12l5.3-5.3L17.3,13.58z"/></svg>
+            </button>
+    </td>
+</ng-container>
    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
    <tr mat-row *matRowDef="let equipment; columns: columnsToDisplay"></tr>
-   
    </table>

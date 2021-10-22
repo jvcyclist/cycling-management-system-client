@@ -4,7 +4,10 @@
     },
 
     "common-actions" : {
-        "back" : "Powrót"
+        "back" : "Powrót",
+        "edit" : "Edytuj",
+        "add" : "Dodaj",
+        "save" : "Zapisz"
     },
     
     "common" : {
@@ -39,12 +42,14 @@
     },
 
     "equipment" : {
+        "id" : "Id",
         "ref_no" : "Numer. Ref.",
         "mark" : "Marka",
         "model" : "Model",
         "type" : "Typ",
         "bikes" : "Rowery",
-        "wheels" : "Koła"
+        "wheels" : "Koła",
+        "preview" : "Podgląd wyposażenia"
     },
     "rider" : {
         "category" : "Kategoria",
@@ -58,7 +63,8 @@
         "title" : "Nazwa",
         "startDate" : "Data rozp.",
         "endDate" : "Data zak.",
-        "url" : "Strona web"
+        "url" : "Strona web",
+        "preview" : "Podgląd wyścigu"
     },
 
     "rider-details" : {
@@ -66,7 +72,34 @@
         "first-name" : "Imię",
         "last-name" : "Nazwisko",
         "category" : "Kategoria",
-        "license-no" : "Numer licencji"
-    }
+        "license-no" : "Numer licencji",
+        "personal-data" : "Dane osobowe",
+        "achievements" : "Osiągnięcia",
+        "medical-card" : "Badania lekarskie",
+        "address" : "Adres"
+    },
 
+    "rider-address" : {
+        "homeNo" : "Numer budynku/mieszkania" ,
+        "zipCode" : "Kod pocztowy" ,
+        "street" : "Ulica" ,
+        "city" : "Miejscowosć" ,
+        "voivodian" : "Województwo"
+    },
+
+    "achievement" : {
+        "id" : "Id" ,
+        "rider-id" : "Id Zawodnika" ,
+        "range" : "Ranga" ,
+        "city" : "Miejscowość" ,
+        "description" : "Opis",
+        "place" : "Zajęte miejsce"
+    },
+
+    "medical-card" : {
+        "id" : "Id" ,
+        "rider-id" : "Id Zawodnika" ,
+        "validFromDate" : "Ważna od" ,
+        "validToDate" : "Ważna do" 
+    }
 }

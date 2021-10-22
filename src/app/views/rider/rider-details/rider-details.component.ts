@@ -1,8 +1,5 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { RiderMock } from 'src/app/models/rider-mock';
-import { Rider } from 'src/app/models/rider.model';
 
 @Component({
   selector: 'app-rider-details',
@@ -11,25 +8,22 @@ import { Rider } from 'src/app/models/rider.model';
 })
 export class RiderDetailsComponent implements OnInit {
 
-  riderMock: RiderMock = new RiderMock()
-  rider: Rider = this.riderMock.riders[0];
+  viewName: string = 'PERSONAL-DATA';
+
   id: number = 0;
   constructor(
-    private route: ActivatedRoute,
-    private location: Location
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       (params: ParamMap) => {
         this.id = Number(params.get('id'));
-        this.rider = this.riderMock.riders[this.id - 1];
       }
-
     )}
 
-    onBack(): void {
-      this.location.back();
+    onChangeView(viewName: string){
+      this.viewName = viewName;
     }
 
 }

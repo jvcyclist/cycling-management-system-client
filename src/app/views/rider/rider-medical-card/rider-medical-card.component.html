@@ -1,0 +1,23 @@
+<ul>
+    <li *ngFor="let medicalCard of medicalCards">
+        <table>
+            <tr>
+                <td>{{ 'medical-card.id' | translate }}</td>
+                <td>{{medicalCard.id }}</td>
+            </tr>
+            <tr>
+                <td>{{ 'medical-card.rider-id' | translate }}</td>
+                <td>{{medicalCard.rider_id}}</td>
+            </tr>
+            <tr>
+                <td>{{ 'medical-card.validFromDate' | translate }}</td>
+                <td>{{medicalCard.validFromDate | date}}</td>
+            </tr>
+            <tr>
+                <td>{{ 'medical-card.validToDate' | translate }}</td>
+                <td>{{medicalCard.validToDate | date}}</td>
+            </tr>
+    
+        </table>
+    </li>
+</ul>

@@ -7,6 +7,10 @@
         "actions": "Actions"
     },
 
+    "common-actions" : {
+        "back": "Back"
+    },
+
     "navigator": {
         "main": "Main",
         "trainings": "Trainings",

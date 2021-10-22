@@ -1,22 +1,11 @@
-{{ 'rider-details.preview' | translate }}
+<app-rider-navigation (viewName)="onChangeView($event)"></app-rider-navigation>
+  <ng-container [ngSwitch]="viewName">
+    <app-rider-personal-data [id]="id" *ngSwitchCase="'PERSONAL-DATA'"></app-rider-personal-data>
+    <app-rider-address [id]="id" *ngSwitchCase="'ADDRESS'"></app-rider-address>
+    <app-rider-achievements [id]="id" *ngSwitchCase="'ACHIEVEMENTS'"></app-rider-achievements>
+    <app-rider-medical-card [id]="id" *ngSwitchCase="'MEDICAL-CARD'"></app-rider-medical-card>
+  </ng-container>
 
-<table>
-    <tr>
-        <td>{{ 'rider-details.category' | translate }}</td>
-        <td>{{rider.category | uppercase }}</td>
-    </tr>
-    <tr>
-      <td>{{ 'rider-details.first-name' | translate }}</td>
-      <td>{{rider.first_name}}</td>
-    </tr>
-    <tr>
-      <td>{{ 'rider-details.last-name' | translate }}</td>
-      <td>{{rider.last_name}}</td>
-    </tr>
-    <tr>
-        <td>{{ 'rider-details.license-no' | translate }}</td>
-        <td>{{rider.license_no}}</td>
-      </tr>
-  </table>
-  <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
 
+
+ 

@@ -1,0 +1,28 @@
+{{ 'equipment.preview' | translate }}
+<table>
+    <tr>
+        <td>{{ 'equipment.id' | translate }}</td>
+        <td>{{equipment.id }}</td>
+    </tr>
+    <tr>
+        <td>{{ 'equipment.ref_no' | translate }}</td>
+        <td>{{equipment.ref_no }}</td>
+    </tr>
+    <tr>
+        <td>{{ 'equipment.mark' | translate }}</td>
+        <td>{{equipment.mark }}</td>
+    </tr>
+    <tr>
+        <td>{{ 'equipment.model' | translate }}</td>
+        <td>{{equipment.model }}</td>
+    </tr>
+    <tr>
+        <td>{{ 'equipment.type' | translate }}</td>
+        <td>{{equipment.type }}</td>
+    </tr>
+
+  </table>
+  <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+  <button (click)="onBack()" type="button" class="btn btn-info">{{ 'common-actions.edit' | translate }}</button>
+
+

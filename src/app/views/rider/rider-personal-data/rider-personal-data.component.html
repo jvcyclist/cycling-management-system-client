@@ -1,0 +1,24 @@
+<br>
+{{ 'rider-details.preview' | translate }}
+<table>
+    <tr>
+        <td>{{ 'rider-details.category' | translate }}</td>
+        <td>{{rider.category | uppercase }}</td>
+    </tr>
+    <tr>
+      <td>{{ 'rider-details.first-name' | translate }}</td>
+      <td>{{rider.first_name}}</td>
+    </tr>
+    <tr>
+      <td>{{ 'rider-details.last-name' | translate }}</td>
+      <td>{{rider.last_name}}</td>
+    </tr>
+    <tr>
+        <td>{{ 'rider-details.license-no' | translate }}</td>
+        <td>{{rider.license_no}}</td>
+      </tr>
+  </table>
+  <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+  <button type="button" class="btn btn-info" routerLink="/rider/{{rider.id}}/edit">{{ 'common-actions.edit' | translate }}</button>
+
+
