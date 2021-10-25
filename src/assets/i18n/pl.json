@@ -7,7 +7,8 @@
         "back" : "Powrót",
         "edit" : "Edytuj",
         "add" : "Dodaj",
-        "save" : "Zapisz"
+        "save" : "Zapisz",
+        "choose-date": "Wybierz datę"
     },
     
     "common" : {
@@ -59,7 +60,7 @@
     },
     
     "race" : {
-        "id" : "Kategoria",
+        "id" : "Id",
         "title" : "Nazwa",
         "startDate" : "Data rozp.",
         "endDate" : "Data zak.",
@@ -93,7 +94,8 @@
         "range" : "Ranga" ,
         "city" : "Miejscowość" ,
         "description" : "Opis",
-        "place" : "Zajęte miejsce"
+        "place" : "Zajęte miejsce",
+        "date" : "Data osiągnięcia"
     },
 
     "medical-card" : {

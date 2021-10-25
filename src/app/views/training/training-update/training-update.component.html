@@ -1,0 +1,33 @@
+{{ 'training.preview' | translate }}
+<div class="training-camp-update-container"> 
+<table>
+    <tr>
+        <td class="entity-attribute-title">{{ 'training.id' | translate }}</td>
+        <td>
+            <input type="text" [(ngModel)]="training.id">
+        </td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'training.date' | translate }}</td>
+        <td><input type="date" [ngModel]="training.date | date: 'yyyy-MM-dd'"></td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'training.type' | translate }}</td>
+        <td><input type="text" [(ngModel)]="training.type"></td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'training.kind' | translate }}</td>
+        <td><input type="text" [(ngModel)]="training.kind"></td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'training.distance' | translate }}</td>
+        <td><input type="text" [(ngModel)]="training.distance"></td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'training.description' | translate }}</td>
+        <td><input type="text" [(ngModel)]="training.description"></td>
+    </tr>
+</table>
+<button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+<button (click)="onSave()" type="button" class="btn btn-info">{{ 'common-actions.save' | translate }}</button>
+</div>

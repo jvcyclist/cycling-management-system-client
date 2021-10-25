@@ -1,28 +1,29 @@
 {{ 'equipment.preview' | translate }}
+<div class="equipment-details-container">
 <table>
     <tr>
-        <td>{{ 'equipment.id' | translate }}</td>
+        <td class="entity-attribute-title">{{ 'equipment.id' | translate }}</td>
         <td>{{equipment.id }}</td>
     </tr>
     <tr>
-        <td>{{ 'equipment.ref_no' | translate }}</td>
+        <td class="entity-attribute-title">{{ 'equipment.ref_no' | translate }}</td>
         <td>{{equipment.ref_no }}</td>
     </tr>
     <tr>
-        <td>{{ 'equipment.mark' | translate }}</td>
+        <td class="entity-attribute-title">{{ 'equipment.mark' | translate }}</td>
         <td>{{equipment.mark }}</td>
     </tr>
     <tr>
-        <td>{{ 'equipment.model' | translate }}</td>
+        <td class="entity-attribute-title">{{ 'equipment.model' | translate }}</td>
         <td>{{equipment.model }}</td>
     </tr>
     <tr>
-        <td>{{ 'equipment.type' | translate }}</td>
+        <td class="entity-attribute-title">{{ 'equipment.type' | translate }}</td>
         <td>{{equipment.type }}</td>
     </tr>
 
   </table>
   <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
-  <button (click)="onBack()" type="button" class="btn btn-info">{{ 'common-actions.edit' | translate }}</button>
-
+  <button type="button" class="btn btn-info" routerLink="/equipment/{{equipment.id}}/edit">{{ 'common-actions.edit' | translate }}</button>
+</div>
 

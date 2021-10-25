@@ -4,7 +4,8 @@ export interface IAchievement {
     range?: string,
     city?: string,
     description?: string,
-    place?: number
+    place?: number,
+    date?: Date
  
 }
 
@@ -14,7 +15,8 @@ export class Achievement implements IAchievement {
                 public range?: string,
                 public city?: string,
                 public description?: string,
-                public place?: number
+                public place?: number,
+                public date?: Date,
     )
     {}
 }

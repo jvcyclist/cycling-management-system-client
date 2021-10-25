@@ -11,11 +11,8 @@ import { RaceComponent } from './views/race/race.component';
 import { EquipmentComponent } from './views/equipment/equipment.component';
 import { ReportErrorComponent } from './views/report-error/report-error.component';
 import { RiderComponent } from './views/rider/rider.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule} from '@angular/material/table';
 import { TrainingCampComponent } from './views/training-camp/training-camp.component';
-import { TrainingDeleteDialogComponent } from './views/training/training-delete-dialog.component';
-import { TrainingDetailComponent } from './views/training/training-detail.component';
-import { TrainingUpdateComponent } from './views/training/training-update.component';
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader"
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -49,14 +46,19 @@ import { RiderAddressComponent } from './views/rider/rider-address/rider-address
 import { RiderAchievementsComponent } from './views/rider/rider-achievements/rider-achievements.component';
 import { RiderMedicalCardComponent } from './views/rider/rider-medical-card/rider-medical-card.component';
 import { RiderUpdateComponent } from './views/rider/rider-update/rider-update.component';
-
+import { RaceUpdateComponent } from './views/race/race-update/race-update.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { TrainingDetailComponent } from './views/training/training-detail/training-detail.component';
+import { TrainingUpdateComponent } from './views/training/training-update/training-update.component';
+import { EquipmentUpdateComponent } from './views/equipment/equipment-update/equipment-update.component';
+import { TrainingCampUpdateComponent } from './views/training-camp/training-camp-update/training-camp-update.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TrainingComponent,
-    TrainingDeleteDialogComponent,
     TrainingDetailComponent,
     TrainingUpdateComponent,
     NavigatorComponent,
@@ -77,7 +79,10 @@ import { RiderUpdateComponent } from './views/rider/rider-update/rider-update.co
     RiderAddressComponent,
     RiderAchievementsComponent,
     RiderMedicalCardComponent,
-    RiderUpdateComponent
+    RiderUpdateComponent,
+    RaceUpdateComponent,
+    EquipmentUpdateComponent,
+    TrainingCampUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -114,7 +119,9 @@ import { RiderUpdateComponent } from './views/rider/rider-update/rider-update.co
     MatSlideToggleModule,
     MatSelectModule,
     MatOptionModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

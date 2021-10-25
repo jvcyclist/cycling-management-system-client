@@ -9,7 +9,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 1
+            place: 1,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 2,
@@ -17,7 +18,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 2
+            place: 2,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 3,
@@ -25,7 +27,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 2
+            place: 2,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 4,
@@ -33,7 +36,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 1
+            place: 1,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 5,
@@ -41,7 +45,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 3
+            place: 3,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 6,
@@ -49,7 +54,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 3
+            place: 3,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 7,
@@ -57,7 +63,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie torowym - Omnium",
             city: "Łódź",
             description: "Test description 1234235423524352",
-            place: 1
+            place: 1,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 8,
@@ -65,7 +72,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie torowym - 1km",
             city: "Łódź",
             description: "Test description 1234235423524352",
-            place: 1
+            place: 1,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 9,
@@ -73,7 +81,8 @@ export class AchievementsMock {
             range: "Puchar Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 1
+            place: 1,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 10,
@@ -81,7 +90,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 2
+            place: 2,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 11,
@@ -89,7 +99,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 1
+            place: 1,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 12,
@@ -97,7 +108,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 2
+            place: 2,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 13,
@@ -105,7 +117,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 1
+            place: 1,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
         {
             id: 14,
@@ -113,7 +126,8 @@ export class AchievementsMock {
             range: "Mistrzostwa Polski w kolarstwie szosowym - Start Wspólny",
             city: "Sobótka",
             description: "Test description 1234235423524352",
-            place: 2
+            place: 2,
+            date: new Date("Fri Dec 08 2019 07:44:57")
         },
 
     ]

@@ -1,0 +1,29 @@
+{{ 'equipment.preview' | translate }}
+<div class="equipment-update-container"> 
+<table>
+    <tr>
+        <td class="entity-attribute-title">{{ 'equipment.id' | translate }}</td>
+        <td>
+            <input type="text" [(ngModel)]="equipment.id">
+        </td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'equipment.ref_no' | translate }}</td>
+        <td><input type="text" [(ngModel)]="equipment.ref_no"></td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'equipment.mark' | translate }}</td>
+        <td><input type="text" [(ngModel)]="equipment.mark"></td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'equipment.model' | translate }}</td>
+        <td><input type="text" [(ngModel)]="equipment.model"></td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'equipment.type' | translate }}</td>
+        <td><input type="text" [(ngModel)]="equipment.type"></td>
+    </tr>
+</table>
+<button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+<button (click)="onSave()" type="button" class="btn btn-info">{{ 'common-actions.save' | translate }}</button>
+</div>
