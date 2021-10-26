@@ -14,7 +14,7 @@ export class RiderUpdateComponent implements OnInit {
   id: number = 0;
 
   riderMock: RiderMock = new RiderMock();
-  rider: Rider = {category: "INIT_CATEGORY", first_name: "", last_name: "", license_no: ""};
+  rider: Rider = {category: "INIT_CATEGORY", firstName: "", lastName: "", licenseNo: ""};
 
   constructor(
     private route: ActivatedRoute,

@@ -4,7 +4,8 @@
     },
 
     "common" : {
-        "actions": "Actions"
+        "actions": "Actions",
+        "journeys" : "Journeys"
     },
 
     "common-actions" : {

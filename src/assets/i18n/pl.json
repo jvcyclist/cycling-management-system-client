@@ -12,7 +12,8 @@
     },
     
     "common" : {
-        "actions" : "Akcje"
+        "actions" : "Akcje",
+        "journeys" : "Wyjazdy"
     },
 
     "navigator": {

@@ -3,7 +3,7 @@
     <button (click)="changeTo('Bikes')" type="button" class="btn btn-secondary">{{'equipment.bikes' | translate }}</button>
 </div>
 <div class="btn-group" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-info">{{'common-actions.add' | translate}}</button>
+    <button type="button" class="btn btn-info" routerLink="/equipments/new">{{'common-actions.add' | translate}}</button>
 </div>
 <table mat-table [dataSource]="particularEquipmentArray">
 

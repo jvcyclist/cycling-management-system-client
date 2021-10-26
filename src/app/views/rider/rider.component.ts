@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RiderMock } from 'src/app/models/rider-mock';
 import { Rider } from 'src/app/models/rider.model';
+import { RiderService } from 'src/app/services/rider.service';
 
 @Component({
   selector: 'app-rider',
@@ -10,15 +11,19 @@ import { Rider } from 'src/app/models/rider.model';
 export class RiderComponent implements OnInit {
 
   riderMock: RiderMock = new RiderMock();
-  riderArray: Rider[] = this.riderMock.riders;
+  riderArray: Rider[] = [];
 
 
-  columnsToDisplay = ['category', 'first_name', 'last_name', 'license_no', 'actions'];
+  columnsToDisplay = ['category', 'firstName', 'lastName', 'licenseNo', 'actions'];
 
 
-  constructor() { }
+  constructor(private riderService: RiderService) { }
 
   ngOnInit(): void {
+    this.riderService.getAllRiders().subscribe(
+      riders => this.riderArray = riders
+    );
+
   }
 
 }
