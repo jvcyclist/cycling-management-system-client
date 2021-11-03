@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RiderMock } from 'src/app/models/rider-mock';
+import { RiderMock } from 'src/app/data-mocks/rider-mock';
 import { Rider } from 'src/app/models/rider.model';
 import { RiderService } from 'src/app/services/rider.service';
 
@@ -14,7 +14,7 @@ export class RiderComponent implements OnInit {
   riderArray: Rider[] = [];
 
 
-  columnsToDisplay = ['category', 'firstName', 'lastName', 'licenseNo', 'actions'];
+  columnsToDisplay = ['category', 'firstName', 'lastName', 'actions'];
 
 
   constructor(private riderService: RiderService) { }
@@ -23,6 +23,7 @@ export class RiderComponent implements OnInit {
     this.riderService.getAllRiders().subscribe(
       riders => this.riderArray = riders
     );
+
 
   }
 

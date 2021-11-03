@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TrainingMock } from 'src/app/models/training-mock';
+import { TrainingMock } from 'src/app/data-mocks/training-mock';
+
 import { Training } from 'src/app/models/training.model';
+import { TrainingService } from 'src/app/services/training.service';
 
 @Component({
   selector: 'app-training',
@@ -10,13 +12,15 @@ import { Training } from 'src/app/models/training.model';
 export class TrainingComponent implements OnInit {
 
   trainingMock: TrainingMock = new TrainingMock();
-  trainingArray: Training[] = this.trainingMock.trainings;
+  trainingArray: Training[] = [];
   
   columnsToDisplay = ['id', 'date', 'type', 'kind', 'distance', 'description', 'actions'];
 
-  constructor() { }
+  constructor(private trainingService: TrainingService) { }
 
   ngOnInit(): void {
+    this.trainingService.getAllTrainings().subscribe(
+      trainings => this.trainingArray = trainings 
+    )
   }
-
 }

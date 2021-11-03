@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { EquipmentMock } from 'src/app/models/equipment-mock';
+import { EquipmentMock } from 'src/app/data-mocks/equipment-mock';
+
 import { Equipment } from 'src/app/models/equipment.model';
+import { EquipmentService } from 'src/app/services/equipment.service';
 
 @Component({
   selector: 'app-equipment',
@@ -10,15 +12,15 @@ import { Equipment } from 'src/app/models/equipment.model';
 export class EquipmentComponent implements OnInit {
 
   equipmentMock: EquipmentMock = new EquipmentMock();
-  equipmentArray: Equipment[] = this.equipmentMock.equipments;
-  particularEquipmentArray: Equipment[] = this.equipmentArray;
+  equipmentArray: Equipment[] = [];
+  particularEquipmentArray: Equipment[] = [];
 
-  columnsToDisplay = ['ref_no', 'mark', 'model', 'type', 'actions'];
+  columnsToDisplay = ['refNo', 'mark', 'model', 'type', 'actions'];
 
   changeTo(equipmentType: string): void {
     switch(equipmentType) {
       case "Wheels" : {
-        this.particularEquipmentArray = this.equipmentArray.filter( e => e.isa == "WHEELS");
+        this.particularEquipmentArray = this.equipmentArray.filter( e => e.isa == "WHEELSET");
         break;
       }
       case "Bikes" : {
@@ -26,15 +28,17 @@ export class EquipmentComponent implements OnInit {
         break;
       }
     }
-
-
-
   }
 
-  constructor() { }
+  constructor(private equipmentService: EquipmentService) { }
 
   ngOnInit(): void {
-
+    this.equipmentService.getAllEquipment().subscribe(
+      (equipments) => {
+        this.equipmentArray = equipments;
+        this.particularEquipmentArray = equipments;
+      }
+    )
   }
 
 }

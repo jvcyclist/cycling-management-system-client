@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { RaceMock } from 'src/app/models/race-mock';
+import { RaceMock } from 'src/app/data-mocks/race-mock';
+
 import { Race } from 'src/app/models/race.model';
+import { RaceService } from 'src/app/services/race.service';
 
 @Component({
   selector: 'app-race',
@@ -10,13 +12,16 @@ import { Race } from 'src/app/models/race.model';
 export class RaceComponent implements OnInit {
 
   raceMock: RaceMock = new RaceMock();
-  races: Race[] = this.raceMock.races;
+  races: Race[] = [];
 
   columnsToDisplay = ['id', 'title', 'startDate', 'endDate','url' , 'actions'];
 
-  constructor() { }
+  constructor(private raceService: RaceService) { }
 
   ngOnInit(): void {
+    this.raceService.getAllRaces().subscribe(
+      races => this.races = races
+    )
   }
 
 }

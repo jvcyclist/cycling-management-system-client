@@ -1,34 +1,35 @@
-<ul>
-    <li *ngFor="let achievement of achievements">
-        <table>
-            <tr>
-                <td>{{ 'achievement.id' | translate }}</td>
-                <td>{{achievement.id }}</td>
-            </tr>
-            <tr>
-                <td>{{ 'achievement.rider-id' | translate }}</td>
-                <td>{{achievement.rider_id}}</td>
-            </tr>
-            <tr>
-                <td>{{ 'achievement.range' | translate }}</td>
-                <td>{{achievement.range}}</td>
-            </tr>
-            <tr>
-                <td>{{ 'achievement.city' | translate }}</td>
-                <td>{{achievement.city}}</td>
-            </tr>
-            <tr>
-                <td>{{ 'achievement.description' | translate }}</td>
-                <td>{{achievement.description}}</td>
-            </tr>
-            <tr>
-                <td>{{ 'achievement.place' | translate }}</td>
-                <td>{{achievement.place}}</td>
-            </tr>
-            <tr>
-                <td>{{ 'achievement.date' | translate }}</td>
-                <td>{{achievement.date | date }}</td>
-            </tr>
-        </table>
-    </li>
-</ul>
+<br>
+{{ 'rider-details.achievements-preview' | translate }}
+<div class="achievements-containter">
+    <ul>
+        <li *ngFor="let achievement of achievements">
+            <table>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'achievement.id' | translate }}</td>
+                    <td>{{achievement.id }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'achievement.range' | translate }}</td>
+                    <td>{{achievement.eventRange}}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'achievement.city' | translate }}</td>
+                    <td>{{achievement.city}}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'achievement.description' | translate }}</td>
+                    <td>{{achievement.description}}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'achievement.place' | translate }}</td>
+                    <td>{{achievement.place}}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'achievement.date' | translate }}</td>
+                    <td>{{achievement.achievementDate | date }}</td>
+                </tr>
+            </table>
+            <hr>
+        </li>
+    </ul>
+</div>

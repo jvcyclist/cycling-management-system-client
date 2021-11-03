@@ -1,4 +1,5 @@
-import { Race } from "./race.model";
+import { Race } from "../models/race.model";
+
 
 export class RaceMock {
 

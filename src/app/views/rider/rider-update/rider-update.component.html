@@ -3,6 +3,10 @@
 <div class="rider-update-container"> 
 <table>
     <tr>
+        <td class="entity-attribute-title">{{ 'rider-details.id' | translate }}</td>
+        <td><input type="text" [(ngModel)]="rider.id"></td>
+    </tr>
+    <tr>
         <td class="entity-attribute-title">{{ 'rider-details.category' | translate }}</td>
         <td>
             <input type="text" [(ngModel)]="rider.category">
@@ -21,6 +25,8 @@
         <td><input type="text" [(ngModel)]="rider.licenseNo"></td>
     </tr>
 </table>
-<button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
-<button (click)="onSave()" type="button" class="btn btn-info">{{ 'common-actions.save' | translate }}</button>
+<div class="d-flex justify-content-between">
+    <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+    <button (click)="onSave()" type="button" class="btn btn-info">{{ 'common-actions.save' | translate }}</button>
+</div>
 </div>

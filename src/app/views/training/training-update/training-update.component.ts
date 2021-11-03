@@ -1,8 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { TrainingMock } from 'src/app/models/training-mock';
+import { TrainingMock } from 'src/app/data-mocks/training-mock';
 import { Training } from 'src/app/models/training.model';
+import { TrainingService } from 'src/app/services/training.service';
 
 @Component({
   selector: 'app-training-update',
@@ -18,7 +19,8 @@ export class TrainingUpdateComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private locate: Location
+    private locate: Location,
+    private trainingService: TrainingService
   ) { }
 
   ngOnInit(): void { 
@@ -28,7 +30,9 @@ export class TrainingUpdateComponent implements OnInit {
         console.log("ID from TrainingUpdateComponent : " + this.id);
         if (this.id !== null && this.id !== 0) {
           console.log('TrainingUpdateComponent: ID is not null');
-          this.training = this.trainingMock.trainings[this.id - 1];
+          this.trainingService.getTrainingById(this.id).subscribe(
+            training => this.training = training
+          )
         } else {
           this.training = new Training();
         }

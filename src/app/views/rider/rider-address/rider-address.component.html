@@ -1,24 +1,30 @@
 <br>
-{{ 'rider-details.preview' | translate }}
-<table>
-    <tr>
-        <td>{{ 'rider-address.homeNo' | translate }}</td>
-        <td>{{address.homeNo | uppercase }}</td>
-    </tr>
-    <tr>
-        <td>{{ 'rider-address.zipCode' | translate }}</td>
-        <td>{{address.zipCode}}</td>
-    </tr>
-    <tr>
-        <td>{{ 'rider-address.street' | translate }}</td>
-        <td>{{address.street}}</td>
-    </tr>
-    <tr>
-        <td>{{ 'rider-address.city' | translate }}</td>
-        <td>{{address.city}}</td>
-    </tr>
-    <tr>
-        <td>{{ 'rider-address.voivodian' | translate }}</td>
-        <td>{{address.voivodian}}</td>
-    </tr>
-</table>
+{{ 'rider-details.address-preview' | translate }}
+<div class="addresses-container">
+    <table>
+        <tr>
+            <td class="entity-attribute-title">{{ 'rider-address.id' | translate }}</td>
+            <td>{{address!.id!}}</td>
+        </tr>
+        <tr>
+            <td class="entity-attribute-title">{{ 'rider-address.homeNo' | translate }}</td>
+            <td>{{address.street }}</td>
+        </tr>
+        <tr>
+            <td class="entity-attribute-title">{{ 'rider-address.zipCode' | translate }}</td>
+            <td>{{address.buildingNumber}}</td>
+        </tr>
+        <tr>
+            <td class="entity-attribute-title">{{ 'rider-address.street' | translate }}</td>
+            <td>{{address.city}}</td>
+        </tr>
+        <tr>
+            <td class="entity-attribute-title">{{ 'rider-address.city' | translate }}</td>
+            <td>{{address.postalCode}}</td>
+        </tr>
+        <tr>
+            <td class="entity-attribute-title">{{ 'rider-address.voivodian' | translate }}</td>
+            <td>{{address.voivodeship}}</td>
+        </tr>
+    </table>
+</div>

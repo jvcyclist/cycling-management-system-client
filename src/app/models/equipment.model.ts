@@ -1,6 +1,6 @@
 export interface IEquipment {
     id?: number,
-    ref_no?: string,
+    refNo?: string,
     mark?: string,
     model?: string,
     type?: string,
@@ -10,7 +10,7 @@ export interface IEquipment {
 
 export class Equipment implements IEquipment {
     constructor(public id?: number,
-                public ref_no?: string,
+                public refNo?: string,
                 public mark?: string,
                 public model?: string,
                 public type?: string,

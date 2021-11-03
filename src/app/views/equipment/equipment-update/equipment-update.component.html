@@ -9,7 +9,7 @@
     </tr>
     <tr>
         <td class="entity-attribute-title">{{ 'equipment.ref_no' | translate }}</td>
-        <td><input type="text" [(ngModel)]="equipment.ref_no"></td>
+        <td><input type="text" [(ngModel)]="equipment.refNo"></td>
     </tr>
     <tr>
         <td class="entity-attribute-title">{{ 'equipment.mark' | translate }}</td>
@@ -24,6 +24,8 @@
         <td><input type="text" [(ngModel)]="equipment.type"></td>
     </tr>
 </table>
-<button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
-<button (click)="onSave()" type="button" class="btn btn-info">{{ 'common-actions.save' | translate }}</button>
+<div class="d-flex justify-content-between">
+    <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+    <button (click)="onSave()" type="button" class="btn btn-info">{{ 'common-actions.save' | translate }}</button>
+</div>
 </div>

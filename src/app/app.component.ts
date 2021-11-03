@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from 'src/environments/environment'; 
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,14 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  appVersion: string;
   title = 'cycling-management-system-client';
   supportLanguage = ['en', 'pl']
 
   constructor(private translateService: TranslateService){
     this.translateService.addLangs(this.supportLanguage);
     this.translateService.setDefaultLang('pl');
-    // const browslang = this.translateService.getBrowserLang();
-    // this.translateService.use(browslang);
+    this.appVersion = environment.VERSION;
   }
 
   switchToLang(lang: string): void{

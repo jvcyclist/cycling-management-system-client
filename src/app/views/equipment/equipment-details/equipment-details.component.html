@@ -7,7 +7,7 @@
     </tr>
     <tr>
         <td class="entity-attribute-title">{{ 'equipment.ref_no' | translate }}</td>
-        <td>{{equipment.ref_no }}</td>
+        <td>{{equipment.refNo }}</td>
     </tr>
     <tr>
         <td class="entity-attribute-title">{{ 'equipment.mark' | translate }}</td>
@@ -23,7 +23,9 @@
     </tr>
 
   </table>
+  <div class="d-flex justify-content-between">
   <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
   <button type="button" class="btn btn-info" routerLink="/equipment/{{equipment.id}}/edit">{{ 'common-actions.edit' | translate }}</button>
+</div>
 </div>
 

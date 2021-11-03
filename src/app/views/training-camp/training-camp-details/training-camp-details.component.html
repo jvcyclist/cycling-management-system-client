@@ -20,6 +20,8 @@
 
 
   </table>
-  <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
-  <button type="button" class="btn btn-info" routerLink="/training-camp/{{trainingCamp.id}}/edit">{{ 'common-actions.edit' | translate }}</button>
+  <div class="d-flex justify-content-between">
+      <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+      <button type="button" class="btn btn-info float-right" routerLink="/training-camp/{{trainingCamp.id}}/edit">{{ 'common-actions.edit' | translate }}</button>
+  </div>
 </div>

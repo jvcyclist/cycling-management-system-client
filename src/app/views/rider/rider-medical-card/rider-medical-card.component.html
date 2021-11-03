@@ -1,23 +1,27 @@
-<ul>
-    <li *ngFor="let medicalCard of medicalCards">
-        <table>
-            <tr>
-                <td>{{ 'medical-card.id' | translate }}</td>
-                <td>{{medicalCard.id }}</td>
-            </tr>
-            <tr>
-                <td>{{ 'medical-card.rider-id' | translate }}</td>
-                <td>{{medicalCard.rider_id}}</td>
-            </tr>
-            <tr>
-                <td>{{ 'medical-card.validFromDate' | translate }}</td>
-                <td>{{medicalCard.validFromDate | date}}</td>
-            </tr>
-            <tr>
-                <td>{{ 'medical-card.validToDate' | translate }}</td>
-                <td>{{medicalCard.validToDate | date}}</td>
-            </tr>
-    
-        </table>
-    </li>
-</ul>
+<br>
+{{ 'rider-details.achievements-medical-cards' | translate }}
+<div class="medical-cards-containter">
+    <ul>
+        <li *ngFor="let medicalCard of medicalCards">
+            <table>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'medical-card.id' | translate }}</td>
+                    <td>{{medicalCard.id }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'medical-card.validFromDate' | translate }}</td>
+                    <td>{{medicalCard.validFrom | date}}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'medical-card.validToDate' | translate }}</td>
+                    <td>{{medicalCard.validTo | date}}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'medical-card.comment' | translate }}</td>
+                    <td>{{medicalCard.comment }}</td>
+                </tr>
+            </table>
+            <hr>
+        </li>
+    </ul>
+</div>

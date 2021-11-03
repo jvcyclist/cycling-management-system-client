@@ -1,7 +1,9 @@
-{{'home.title' | translate}}
-<div class="btn-group" role="group" aria-label="Basic example">
-    <button (click)="switchToLang('pl')" type="button" class="btn btn-secondary">pl</button>
-    <button (click)="switchToLang('en')" type="button" class="btn btn-secondary">en</button>
+<div class="d-flex justify-content-between">
+    {{'home.system-version' | translate}} {{appVersion}}
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button (click)="switchToLang('pl')" type="button" class="btn btn-secondary">pl</button>
+        <button (click)="switchToLang('en')" type="button" class="btn btn-secondary">en</button>
+    </div>
 </div>
 <app-navigator></app-navigator>
 <div>

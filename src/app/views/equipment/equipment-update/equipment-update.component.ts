@@ -1,7 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { EquipmentMock } from 'src/app/models/equipment-mock';
+import { EquipmentMock } from 'src/app/data-mocks/equipment-mock';
+
 import { Equipment } from 'src/app/models/equipment.model';
 
 @Component({
@@ -14,7 +15,7 @@ export class EquipmentUpdateComponent implements OnInit {
   id: number = 0;
 
   equipmentMock: EquipmentMock = new EquipmentMock();
-  equipment: Equipment = {id: 0, type: "", isa: "", mark: "", model: "", ref_no: ""};
+  equipment: Equipment = {id: 0, type: "", isa: "", mark: "", model: "", refNo: ""};
 
   constructor(
     private route: ActivatedRoute,

@@ -1,20 +1,20 @@
 export interface IAddress {
     id?: number,
-    homeNo?: string,
-    zipCode?: string,
-    street? : string,
-    city?: string,
-    voivodian?: string
+    street?: string,
+    buildingNumber?: string,
+    city? : string,
+    postalCode?: string,
+    voivodeship?: string
 
 }
 
 export class Address implements IAddress {
     constructor(public id?: number,
-                public homeNo?: string,
                 public street?: string,
-                public zipCode?: string,
+                public buildingNumber?: string,
                 public city?: string,
-                public voivodian?: string
+                public postalCode?: string,
+                public voivodeship?: string
     )
     {}
 }

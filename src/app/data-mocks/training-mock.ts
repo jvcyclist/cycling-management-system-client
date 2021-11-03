@@ -1,4 +1,5 @@
-import { Training } from "./training.model";
+import { Training } from "../models/training.model";
+
 
 export class TrainingMock{
     

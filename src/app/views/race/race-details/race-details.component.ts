@@ -1,8 +1,10 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { RaceMock } from 'src/app/models/race-mock';
+import { RaceMock } from 'src/app/data-mocks/race-mock';
+
 import { Race } from 'src/app/models/race.model';
+import { RaceService } from 'src/app/services/race.service';
 
 @Component({
   selector: 'app-race-details',
@@ -12,20 +14,23 @@ import { Race } from 'src/app/models/race.model';
 export class RaceDetailsComponent implements OnInit {
 
   raceMock: RaceMock = new RaceMock();
-  race: Race = this.raceMock.races[0];
+  race: Race = {};
   id: number = 0;
 
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private raceService: RaceService
   ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       (params: ParamMap) => {
         this.id = Number(params.get('id'));
-        this.race = this.raceMock.races[this.id - 1];
+        this.raceService.getRaceById(this.id).subscribe(
+          race => this.race = race
+        )
       });
   }
 

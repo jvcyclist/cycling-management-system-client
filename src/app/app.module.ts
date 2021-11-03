@@ -53,6 +53,7 @@ import { TrainingDetailComponent } from './views/training/training-detail/traini
 import { TrainingUpdateComponent } from './views/training/training-update/training-update.component';
 import { EquipmentUpdateComponent } from './views/equipment/equipment-update/equipment-update.component';
 import { TrainingCampUpdateComponent } from './views/training-camp/training-camp-update/training-camp-update.component';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -123,7 +124,7 @@ import { TrainingCampUpdateComponent } from './views/training-camp/training-camp
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [ { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

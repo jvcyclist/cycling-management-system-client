@@ -1,6 +1,7 @@
 {
     "home" : {
-        "title": "Witamy na stronie"
+        "title": "Witamy na stronie",
+        "system-version" : "Wersja systemu: "
     },
 
     "common-actions" : {
@@ -8,12 +9,14 @@
         "edit" : "Edytuj",
         "add" : "Dodaj",
         "save" : "Zapisz",
+        "delete" : "Usuń",
         "choose-date": "Wybierz datę"
     },
     
     "common" : {
         "actions" : "Akcje",
-        "journeys" : "Wyjazdy"
+        "journeys" : "Wyjazdy",
+        "calendar" : "Kalendarz"
     },
 
     "navigator": {
@@ -22,7 +25,8 @@
         "races": "Wyścigi",
         "training-camps": "Zgrupowania",
         "riders": "Zawodnicy",
-        "equipment": "Sprzęt"
+        "equipment": "Sprzęt",
+        "logout": "Wyloguj"
     },
 
     "training" : {
@@ -70,6 +74,7 @@
     },
 
     "rider-details" : {
+        "id" : "Id",
         "preview" : "Podgląd zawodnika",
         "first-name" : "Imię",
         "last-name" : "Nazwisko",
@@ -78,10 +83,14 @@
         "personal-data" : "Dane osobowe",
         "achievements" : "Osiągnięcia",
         "medical-card" : "Badania lekarskie",
-        "address" : "Adres"
+        "address" : "Adres",
+        "address-preview": "Podgląd adresu",
+        "achievements-preview" : "Podgląd osiągnięć",
+        "achievements-medical-cards" : "Podgląd badań lekarskich"
     },
 
     "rider-address" : {
+        "id" : "Id" ,
         "homeNo" : "Numer budynku/mieszkania" ,
         "zipCode" : "Kod pocztowy" ,
         "street" : "Ulica" ,
@@ -103,6 +112,7 @@
         "id" : "Id" ,
         "rider-id" : "Id Zawodnika" ,
         "validFromDate" : "Ważna od" ,
-        "validToDate" : "Ważna do" 
+        "validToDate" : "Ważna do" ,
+        "comment" : "Komentarz"
     }
 }

@@ -1,9 +1,9 @@
 <app-rider-navigation (viewName)="onChangeView($event)"></app-rider-navigation>
   <ng-container [ngSwitch]="viewName">
     <app-rider-personal-data [id]="id" *ngSwitchCase="'PERSONAL-DATA'"></app-rider-personal-data>
-    <app-rider-address [id]="id" *ngSwitchCase="'ADDRESS'"></app-rider-address>
-    <app-rider-achievements [id]="id" *ngSwitchCase="'ACHIEVEMENTS'"></app-rider-achievements>
-    <app-rider-medical-card [id]="id" *ngSwitchCase="'MEDICAL-CARD'"></app-rider-medical-card>
+    <app-rider-address [id]="id" [address]="address" *ngSwitchCase="'ADDRESS'"></app-rider-address>
+    <app-rider-achievements [id]="id" [achievements]="achievements" *ngSwitchCase="'ACHIEVEMENTS'"></app-rider-achievements>
+    <app-rider-medical-card [id]="id" [medicalCards]="medicalCards" *ngSwitchCase="'MEDICAL-CARD'"></app-rider-medical-card>
   </ng-container>
 
 

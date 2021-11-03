@@ -28,6 +28,8 @@
         <td><input type="text" [(ngModel)]="training.description"></td>
     </tr>
 </table>
-<button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
-<button (click)="onSave()" type="button" class="btn btn-info">{{ 'common-actions.save' | translate }}</button>
+<div class="d-flex justify-content-between">
+    <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+    <button (click)="onSave()" type="button" class="btn btn-info">{{ 'common-actions.save' | translate }}</button>
+</div>
 </div>

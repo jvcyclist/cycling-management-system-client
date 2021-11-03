@@ -1,9 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { TrainingCampMock } from 'src/app/models/training-camp-mock';
-import { TrainingMock } from 'src/app/models/training-mock';
+import { TrainingMock } from 'src/app/data-mocks/training-mock';
 import { Training } from 'src/app/models/training.model';
+import { TrainingService } from 'src/app/services/training.service';
 
 @Component({
   selector: 'app-training-detail',
@@ -12,19 +12,22 @@ import { Training } from 'src/app/models/training.model';
 })
 export class TrainingDetailComponent implements OnInit {
   trainingMock: TrainingMock = new TrainingMock();
-  training: Training = this.trainingMock.trainings[0];
+  training: Training = {};
   id: number = 0;
 
   constructor(
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private trainingService: TrainingService
     ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(
       (params: ParamMap) => {
         this.id = Number(params.get('id'));
-        this.training = this.trainingMock.trainings[this.id - 1];
+        this.trainingService.getTrainingById(this.id).subscribe(
+          training => this.training = training
+        )
       });
   }
 

@@ -1,26 +1,28 @@
 {{ 'race.preview' | translate }}
 
 <div class="race-update-container">
-<table>
-    <tr>
-        <td class="entity-attribute-title">{{ 'race.title' | translate }}</td>
-        <td>
-            <input type="text" [(ngModel)]="race.title">
-        </td>
-    </tr>
-    <tr>
-        <td class="entity-attribute-title">{{ 'race.startDate' | translate }}</td>
-        <td><input type="date" [ngModel]="race.startDate | date:'yyyy-MM-dd'"></td>
-    </tr>
-    <tr>
-        <td class="entity-attribute-title">{{ 'race.endDate' | translate }}</td>
-        <td><input type="date" [ngModel]="race.endDate | date:'yyyy-MM-dd'"></td>
-    </tr>
-    <tr>
-        <td class="entity-attribute-title">{{ 'race.url' | translate }}</td>
-        <td><input type="text" [(ngModel)]="race.url"></td>
-    </tr>
-</table>
-<button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
-<button (click)="onSave()" type="button" class="btn btn-info">{{ 'common-actions.save' | translate }}</button>
+    <table>
+        <tr>
+            <td class="entity-attribute-title">{{ 'race.title' | translate }}</td>
+            <td>
+                <input type="text" [(ngModel)]="race.title">
+            </td>
+        </tr>
+        <tr>
+            <td class="entity-attribute-title">{{ 'race.startDate' | translate }}</td>
+            <td><input type="date" [ngModel]="race.startDate | date:'yyyy-MM-dd'"></td>
+        </tr>
+        <tr>
+            <td class="entity-attribute-title">{{ 'race.endDate' | translate }}</td>
+            <td><input type="date" [ngModel]="race.endDate | date:'yyyy-MM-dd'"></td>
+        </tr>
+        <tr>
+            <td class="entity-attribute-title">{{ 'race.url' | translate }}</td>
+            <td><input type="text" [(ngModel)]="race.url"></td>
+        </tr>
+    </table>
+    <div class="d-flex justify-content-between">
+            <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+            <button (click)="onSave()" type="button" class="btn btn-info">{{ 'common-actions.save' | translate }}</button>
+    </div>
 </div>
