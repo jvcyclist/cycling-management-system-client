@@ -1,13 +1,3 @@
-<app-race-navigation (viewName)="onChangeView($event)"></app-race-navigation>
-<ng-container [ngSwitch]="viewName">
-    <app-race-summary [id]="id" *ngSwitchCase="'SUMMARY'"></app-race-summary>
-    <app-race-accomodation [id]="id" [journey]="journey" *ngSwitchCase="'ACCOMODATION'"></app-race-accomodation>
-    <app-race-riders [id]="id" [journey]="journey" *ngSwitchCase="'RIDERS'"></app-race-riders>
-</ng-container>
-
-
-
-<!--
 <br>
 {{ 'race.preview' | translate }}
 <div class="race-details-container">
@@ -40,8 +30,3 @@
       <button type="button" class="btn btn-info" routerLink="/race/{{race.id}}/edit">{{ 'common-actions.edit' | translate }}</button>
   </div>
 </div>
--->
-
-
-
-

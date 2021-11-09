@@ -4,7 +4,7 @@
     <tr>
         <td class="entity-attribute-title">{{ 'training.id' | translate }}</td>
         <td>
-            <input type="text" [(ngModel)]="training.id">
+            {{training.id}}
         </td>
     </tr>
     <tr>
@@ -21,7 +21,7 @@
     </tr>
     <tr>
         <td class="entity-attribute-title">{{ 'training.distance' | translate }}</td>
-        <td><input type="text" [(ngModel)]="training.distance"></td>
+        <td><input type="number" [(ngModel)]="training.distance"></td>
     </tr>
     <tr>
         <td class="entity-attribute-title">{{ 'training.description' | translate }}</td>

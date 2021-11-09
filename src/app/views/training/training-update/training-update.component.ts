@@ -45,7 +45,9 @@ export class TrainingUpdateComponent implements OnInit {
   }
 
   onSave(): void {
-    console.log('TrainingUpdateComponent:onSave works');
+    this.trainingService.updateTraining(this.training).subscribe(
+      training => console.log("Training updated!")
+    );
   }
 
 }

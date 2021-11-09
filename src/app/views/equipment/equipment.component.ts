@@ -12,7 +12,7 @@ import { EquipmentService } from 'src/app/services/equipment.service';
 export class EquipmentComponent implements OnInit {
 
   equipmentMock: EquipmentMock = new EquipmentMock();
-  equipmentArray: Equipment[] = [];
+  equipmentArray: Equipment[] = this.equipmentMock.equipments;
   particularEquipmentArray: Equipment[] = [];
 
   columnsToDisplay = ['refNo', 'mark', 'model', 'type', 'actions'];
@@ -20,7 +20,7 @@ export class EquipmentComponent implements OnInit {
   changeTo(equipmentType: string): void {
     switch(equipmentType) {
       case "Wheels" : {
-        this.particularEquipmentArray = this.equipmentArray.filter( e => e.isa == "WHEELSET");
+        this.particularEquipmentArray = this.equipmentArray.filter( e => e.isa == "WHEELS");
         break;
       }
       case "Bikes" : {
@@ -33,12 +33,7 @@ export class EquipmentComponent implements OnInit {
   constructor(private equipmentService: EquipmentService) { }
 
   ngOnInit(): void {
-    this.equipmentService.getAllEquipment().subscribe(
-      (equipments) => {
-        this.equipmentArray = equipments;
-        this.particularEquipmentArray = equipments;
-      }
-    )
+   
   }
 
 }

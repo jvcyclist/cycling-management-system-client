@@ -13,7 +13,7 @@ export class TrainingService {
 
   constructor(private http: HttpClient) { }
 
-  getAllTrainings(): Observable<Training[]>{
+  getAllTrainings(): Observable<Training[]> {
     return this.http.get<Training[]>(this.url);
   }
 
@@ -21,4 +21,11 @@ export class TrainingService {
     return this.http.get<Training>(this.url + '/' + id);
   }
 
+  updateTraining(training: Training): Observable<Training> {
+    return this.http.put<Training>(this.url, training);
+  }
+
+  deleteTrainingById(id: number): Observable<Response>{
+    return this.http.delete<Response>(this.url + '/' + id)
+  }
 }

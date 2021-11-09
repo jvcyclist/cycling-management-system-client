@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { RiderMock } from 'src/app/data-mocks/rider-mock';
+import { Category } from 'src/app/models/category.model';
 import { Rider } from 'src/app/models/rider.model';
 import { RiderService } from 'src/app/services/rider.service';
 
@@ -14,8 +15,10 @@ export class RiderUpdateComponent implements OnInit {
 
   id: number = 0;
 
+  category: Category = {name:"ZAK"}
+
   riderMock: RiderMock = new RiderMock();
-  rider: Rider = {firstName: "", lastName: "", licenseNo: ""};
+  rider: Rider = {firstName: "", lastName: "", licenseNo: "", category: this.category};
 
   constructor(
     private route: ActivatedRoute,
@@ -32,9 +35,7 @@ export class RiderUpdateComponent implements OnInit {
           console.log('RiderUpdateComponent: ID is not null');
           this.riderService.getRiderById(this.id).subscribe(
             rider => this.rider = rider)
-        } else {
-          this.rider = new Rider();
-        }
+        } 
       }
     )
   }

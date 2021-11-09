@@ -73,6 +73,12 @@
         "preview" : "Podgląd wyścigu"
     },
 
+    "race-navigation" : {
+        "accomodation": "Zakwaterowanie",
+        "riders": "Zawodnicy",
+        "summary" : "Podsumowanie"
+    },
+
     "rider-details" : {
         "id" : "Id",
         "preview" : "Podgląd zawodnika",
@@ -91,11 +97,28 @@
 
     "rider-address" : {
         "id" : "Id" ,
-        "homeNo" : "Numer budynku/mieszkania" ,
+        "homeNo" : "Numer budynku" ,
         "zipCode" : "Kod pocztowy" ,
         "street" : "Ulica" ,
         "city" : "Miejscowosć" ,
         "voivodian" : "Województwo"
+    },
+
+    "accomodation-address" : {
+        "id" : "Id" ,
+        "buildingNumber" : "Numer budynku" ,
+        "postalCode" : "Kod pocztowy" ,
+        "street" : "Ulica" ,
+        "city" : "Miejscowosć" ,
+        "voivodeship" : "Województwo"
+    },
+
+    "race-accomodation" : {
+        "id" : "Id" ,
+        "title" : "Zakwaterowanie" ,
+        "date" : "Okres" ,
+        "startDateTime" : "Data pocz." ,
+        "endDateTime" : "Data końc." 
     },
 
     "achievement" : {

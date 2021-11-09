@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './views/admin/admin/admin.component';
 import { EquipmentDetailsComponent } from './views/equipment/equipment-details/equipment-details.component';
 import { EquipmentUpdateComponent } from './views/equipment/equipment-update/equipment-update.component';
 import { EquipmentComponent } from './views/equipment/equipment.component';
 import { LoginComponent } from './views/login/login.component';
 import { MainComponent } from './views/main/main.component';
+import { RaceCalendarComponent } from './views/race/race-calendar/race-calendar.component';
 import { RaceDetailsComponent } from './views/race/race-details/race-details.component';
 import { RaceUpdateComponent } from './views/race/race-update/race-update.component';
 import { RaceComponent } from './views/race/race.component';
@@ -31,9 +33,11 @@ const routes: Routes = [
   { path: 'training/:id/edit', component: TrainingUpdateComponent },
 
   { path: 'race', component: RaceComponent },
+  { path: 'race/calendar', component: RaceCalendarComponent },
   { path: 'race/:id', component: RaceDetailsComponent },
   { path: 'races/new', component: RaceUpdateComponent },
   { path: 'race/:id/edit', component: RaceUpdateComponent },
+  
 
   { path: 'training-camp', component: TrainingCampComponent },
   { path: 'training-camp/:id', component: TrainingCampDetailsComponent },
@@ -50,6 +54,8 @@ const routes: Routes = [
   { path: 'equipment/:id', component: EquipmentDetailsComponent },
   { path: 'equipments/new', component: EquipmentUpdateComponent },
   { path: 'equipment/:id/edit', component: EquipmentUpdateComponent },
+
+  { path: 'admin', component: AdminComponent },
 
   { path: 'report-error', component: ReportErrorComponent }
 ];

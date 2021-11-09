@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AddressMock } from 'src/app/data-mocks/address-mock';
 import { Achievement } from 'src/app/models/achievement.model';
 import { Address } from 'src/app/models/address.model';
+import { AddressService } from 'src/app/services/address.service';
 
 @Component({
   selector: 'app-rider-address',
@@ -18,13 +19,30 @@ export class RiderAddressComponent implements OnInit {
 
   addressMock: AddressMock = new AddressMock();
 
+  isEditable: boolean = false;
+
   //address: Address = this.addressMock.addresses[this.id];
 
-  constructor() { }
+  constructor(private addressService: AddressService) { }
 
   ngOnInit(): void {
     console.log("ID from RiderAddressComponent : " + this.id);
     console.log(this.address);
   }
+
+
+  onSave(){
+    this.addressService.save(this.address).subscribe(
+      address => {
+        this.address = address;
+        this.isEditable = !this.isEditable;
+      }
+    )
+  }
+
+  onEdit(){
+    this.isEditable = !this.isEditable;
+  }
+
 
 }

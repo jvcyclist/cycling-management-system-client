@@ -2,8 +2,11 @@ import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { RaceMock } from 'src/app/data-mocks/race-mock';
+import { Address } from 'src/app/models/address.model';
+import { Journey } from 'src/app/models/journey.model';
 
 import { Race } from 'src/app/models/race.model';
+import { Rider } from 'src/app/models/rider.model';
 import { RaceService } from 'src/app/services/race.service';
 
 @Component({
@@ -13,10 +16,14 @@ import { RaceService } from 'src/app/services/race.service';
 })
 export class RaceDetailsComponent implements OnInit {
 
+  viewName: string = 'SUMMARY';
+
   raceMock: RaceMock = new RaceMock();
   race: Race = {};
   id: number = 0;
 
+  riders: Rider[]= [];
+  journey: Journey = {};
 
   constructor(
     private route: ActivatedRoute,
@@ -29,7 +36,10 @@ export class RaceDetailsComponent implements OnInit {
       (params: ParamMap) => {
         this.id = Number(params.get('id'));
         this.raceService.getRaceById(this.id).subscribe(
-          race => this.race = race
+          race => {
+          this.race = race;
+          this.journey = race.journey!;
+        }
         )
       });
   }
@@ -38,6 +48,8 @@ export class RaceDetailsComponent implements OnInit {
     this.location.back();
   }
 
-  
+  onChangeView(viewName: string){
+    this.viewName = viewName;
+  }
 
 }

@@ -54,6 +54,12 @@ import { TrainingUpdateComponent } from './views/training/training-update/traini
 import { EquipmentUpdateComponent } from './views/equipment/equipment-update/equipment-update.component';
 import { TrainingCampUpdateComponent } from './views/training-camp/training-camp-update/training-camp-update.component';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { AdminComponent } from './views/admin/admin/admin.component';
+import { RaceNavigationComponent } from './views/race/race-navigation/race-navigation.component';
+import { RaceSummaryComponent } from './views/race/race-summary/race-summary.component';
+import { RaceAccomodationComponent } from './views/race/race-accomodation/race-accomodation.component';
+import { RaceRidersComponent } from './views/race/race-riders/race-riders.component';
+import { RaceCalendarComponent } from './views/race/race-calendar/race-calendar.component';
 
 
 @NgModule({
@@ -83,7 +89,13 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
     RiderUpdateComponent,
     RaceUpdateComponent,
     EquipmentUpdateComponent,
-    TrainingCampUpdateComponent
+    TrainingCampUpdateComponent,
+    AdminComponent,
+    RaceNavigationComponent,
+    RaceSummaryComponent,
+    RaceAccomodationComponent,
+    RaceRidersComponent,
+    RaceCalendarComponent
   ],
   imports: [
     BrowserModule,
