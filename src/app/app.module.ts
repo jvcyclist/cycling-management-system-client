@@ -60,7 +60,12 @@ import { RaceSummaryComponent } from './views/race/race-summary/race-summary.com
 import { RaceAccomodationComponent } from './views/race/race-accomodation/race-accomodation.component';
 import { RaceRidersComponent } from './views/race/race-riders/race-riders.component';
 import { RaceCalendarComponent } from './views/race/race-calendar/race-calendar.component';
-
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CommonModule } from '@angular/common';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { NearestServicesComponent } from './views/race/nearest-services/nearest-services.component';
 
 @NgModule({
   declarations: [
@@ -95,9 +100,12 @@ import { RaceCalendarComponent } from './views/race/race-calendar/race-calendar.
     RaceSummaryComponent,
     RaceAccomodationComponent,
     RaceRidersComponent,
-    RaceCalendarComponent
+    RaceCalendarComponent,
+    NearestServicesComponent
   ],
   imports: [
+    NgbModalModule,
+    CommonModule,
     BrowserModule,
     NgbModule,
     AppRoutingModule,
@@ -134,7 +142,9 @@ import { RaceCalendarComponent } from './views/race/race-calendar/race-calendar.
     MatOptionModule,
     MatProgressSpinnerModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [ { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },],
   bootstrap: [AppComponent]

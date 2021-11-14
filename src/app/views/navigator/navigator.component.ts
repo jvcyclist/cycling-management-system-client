@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import jsPDF from 'jspdf';
 
 @Component({
   selector: 'app-navigator',
@@ -24,6 +25,14 @@ export class NavigatorComponent implements OnInit {
 
   changeActiveTabTitle(tabTitle: string): void {
     this.tabTitle = tabTitle;
+  }
+
+  downloadPDFTEST(){
+    const doc = new jsPDF();
+
+
+    doc.text("Hello world!", 50, 50);
+    doc.save("a5.pdf");
   }
 
 }

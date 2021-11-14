@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { EquipmentMock } from 'src/app/data-mocks/equipment-mock';
 
 import { Equipment } from 'src/app/models/equipment.model';
+import { EquipmentService } from 'src/app/services/equipment.service';
 
 @Component({
   selector: 'app-equipment-update',
@@ -19,7 +20,8 @@ export class EquipmentUpdateComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private locate: Location
+    private locate: Location,
+    private equipmentService: EquipmentService
   ) { }
 
   ngOnInit(): void { 
@@ -42,7 +44,9 @@ export class EquipmentUpdateComponent implements OnInit {
   }
 
   onSave(): void {
-    console.log('EquipmentUpdateComponent:onSave works');
+    this.equipmentService.saveEquipment(this.equipment).subscribe(
+      equipment => this.equipment = equipment
+    )
   }
 
 

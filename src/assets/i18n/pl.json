@@ -76,7 +76,8 @@
     "race-navigation" : {
         "accomodation": "Zakwaterowanie",
         "riders": "Zawodnicy",
-        "summary" : "Podsumowanie"
+        "summary" : "Podsumowanie",
+        "near-services": "Najbliższe usługi"
     },
 
     "rider-details" : {
@@ -137,5 +138,36 @@
         "validFromDate" : "Ważna od" ,
         "validToDate" : "Ważna do" ,
         "comment" : "Komentarz"
+    },
+
+    "calendar" : {
+        "previous" : "Poprz.",
+        "today" : "Dzisiaj",
+        "next" : "Nast.",
+        "month" : "Miesiąc",
+        "week" : "Tydzień",
+        "day" : "Dzień"
+    },
+    "nearest-services" : {
+        "name" : "Nazwa",
+        "address" : "Adres",
+        "isOpen" : "Czy otwarte",
+        "rating" : "Średnia z opinii",
+        "userRatingsTotal" : "Ilość ocen",
+        "petrolStation" : {
+            "title" : "Stacje benzynowe"
+        },
+        "hotel" : {
+            "title" : "Hotele"
+        },
+        "parking" : {
+            "title" : "Parkingi"
+        },
+        "groceryShop" : {
+            "title" : "Sklepy spożywcze"
+        }
+        ,  "restaurant" : {
+            "title" : "Gastronomia"
+        }
     }
 }

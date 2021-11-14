@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-      let url = 'http://localhost:8082/login';
+      let url = 'http://localhost:8080/login';
       this.http.post<Observable<boolean>>(url, {
           userName: this.model.username,
           password: this.model.password

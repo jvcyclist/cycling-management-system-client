@@ -1,0 +1,129 @@
+<br>
+<div class="nearest-services-containter">
+    <a *ngIf="serviceCandidateListPetrolStation.length > 0">{{ 'nearest-services.petrolStation.title' | translate | uppercase }}</a>
+    <ul>
+        <li *ngFor="let result of serviceCandidateListPetrolStation; index as i">
+            <table>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.name' | translate }}</td>
+                    <td>{{result.name }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.address' | translate }}</td>
+                    <td>{{result.formatted_address }}</td>
+                </tr>
+    
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.rating' | translate }}</td>
+                    <td>{{result.rating }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.userRatingsTotal' | translate }}</td>
+                    <td>{{result.user_ratings_total }}</td>
+                </tr>
+            </table>
+            <hr>
+        </li>
+    </ul>
+    <br>
+    <a *ngIf="serviceCandidateListHotel.length > 0">{{ 'nearest-services.hotel.title' | translate | uppercase }}</a>
+    <ul>
+        <li *ngFor="let result of serviceCandidateListHotel; index as i">
+            <table>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.name' | translate }}</td>
+                    <td>{{result.name }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.address' | translate }}</td>
+                    <td>{{result.formatted_address }}</td>
+                </tr>
+    
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.rating' | translate }}</td>
+                    <td>{{result.rating }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.userRatingsTotal' | translate }}</td>
+                    <td>{{result.user_ratings_total }}</td>
+                </tr>
+            </table>
+            <hr>
+        </li>
+    </ul>
+    <a *ngIf="serviceCandidateListParking.length > 0">{{ 'nearest-services.parking.title' | translate | uppercase }}</a>
+    <ul>
+        <li *ngFor="let result of serviceCandidateListParking; index as i">
+            <table>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.name' | translate }}</td>
+                    <td>{{result.name }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.address' | translate }}</td>
+                    <td>{{result.formatted_address }}</td>
+                </tr>
+    
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.rating' | translate }}</td>
+                    <td>{{result.rating }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.userRatingsTotal' | translate }}</td>
+                    <td>{{result.user_ratings_total }}</td>
+                </tr>
+            </table>
+            <hr>
+        </li>
+    </ul>
+    <a *ngIf="serviceCandidateListGroceryShop.length > 0">{{ 'nearest-services.groceryShop.title' | translate | uppercase }}</a>
+    <ul>
+        <li *ngFor="let result of serviceCandidateListGroceryShop; index as i">
+            <table>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.name' | translate }}</td>
+                    <td>{{result.name }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.address' | translate }}</td>
+                    <td>{{result.formatted_address }}</td>
+                </tr>
+    
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.rating' | translate }}</td>
+                    <td>{{result.rating }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.userRatingsTotal' | translate }}</td>
+                    <td>{{result.user_ratings_total }}</td>
+                </tr>
+            </table>
+            <hr>
+        </li>
+    </ul>
+    <a *ngIf="serviceCandidateListRestaurants.length > 0">{{ 'nearest-services.restaurant.title' | translate | uppercase }}</a>
+    <ul>
+        <li *ngFor="let result of serviceCandidateListRestaurants; index as i">
+            <table>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.name' | translate }}</td>
+                    <td>{{result.name }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.address' | translate }}</td>
+                    <td>{{result.formatted_address }}</td>
+                </tr>
+    
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.rating' | translate }}</td>
+                    <td>{{result.rating }}</td>
+                </tr>
+                <tr>
+                    <td class="entity-attribute-title">{{ 'nearest-services.userRatingsTotal' | translate }}</td>
+                    <td>{{result.user_ratings_total }}</td>
+                </tr>
+            </table>
+            <hr>
+        </li>
+    </ul>
+</div>
