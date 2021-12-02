@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrainingCampUpdateComponent } from './training-camp-update.component';
+import { AccountActivationComponent } from './account-activation.component';
 
-describe('TrainingCampUpdateComponent', () => {
-  let component: TrainingCampUpdateComponent;
-  let fixture: ComponentFixture<TrainingCampUpdateComponent>;
+describe('AccountActivationComponent', () => {
+  let component: AccountActivationComponent;
+  let fixture: ComponentFixture<AccountActivationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrainingCampUpdateComponent ]
+      declarations: [ AccountActivationComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrainingCampUpdateComponent);
+    fixture = TestBed.createComponent(AccountActivationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

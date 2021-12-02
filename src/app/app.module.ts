@@ -12,13 +12,11 @@ import { EquipmentComponent } from './views/equipment/equipment.component';
 import { ReportErrorComponent } from './views/report-error/report-error.component';
 import { RiderComponent } from './views/rider/rider.component';
 import { MatTableModule} from '@angular/material/table';
-import { TrainingCampComponent } from './views/training-camp/training-camp.component';
 import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader"
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NearestRacesComponent } from './views/nearest-races/nearest-races.component';
 import { RiderDetailsComponent } from './views/rider/rider-details/rider-details.component';
-import { TrainingCampDetailsComponent } from './views/training-camp/training-camp-details/training-camp-details.component';
 import { RaceDetailsComponent } from './views/race/race-details/race-details.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -47,14 +45,12 @@ import { RiderAchievementsComponent } from './views/rider/rider-achievements/rid
 import { RiderMedicalCardComponent } from './views/rider/rider-medical-card/rider-medical-card.component';
 import { RiderUpdateComponent } from './views/rider/rider-update/rider-update.component';
 import { RaceUpdateComponent } from './views/race/race-update/race-update.component';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { TrainingDetailComponent } from './views/training/training-detail/training-detail.component';
 import { TrainingUpdateComponent } from './views/training/training-update/training-update.component';
 import { EquipmentUpdateComponent } from './views/equipment/equipment-update/equipment-update.component';
-import { TrainingCampUpdateComponent } from './views/training-camp/training-camp-update/training-camp-update.component';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
-import { AdminComponent } from './views/admin/admin/admin.component';
 import { RaceNavigationComponent } from './views/race/race-navigation/race-navigation.component';
 import { RaceSummaryComponent } from './views/race/race-summary/race-summary.component';
 import { RaceAccomodationComponent } from './views/race/race-accomodation/race-accomodation.component';
@@ -66,6 +62,13 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { CommonModule } from '@angular/common';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { NearestServicesComponent } from './views/race/nearest-services/nearest-services.component';
+import { RegisterAccountComponent } from './views/admin/register-account/register-account.component';
+import { UsersComponent } from './views/admin/users/users.component';
+import { AdminBoardComponent } from './views/admin/admin-board/admin-board.component';
+import { UserDetailsComponent } from './views/admin/user-details/user-details.component';
+import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { AddUserComponent } from './views/admin-board/add-user/add-user.component';
+import { AccountActivationComponent } from './views/account-activation/account-activation.component';
 
 @NgModule({
   declarations: [
@@ -79,10 +82,8 @@ import { NearestServicesComponent } from './views/race/nearest-services/nearest-
     EquipmentComponent,
     ReportErrorComponent,
     RiderComponent,
-    TrainingCampComponent,
     NearestRacesComponent,
     RiderDetailsComponent,
-    TrainingCampDetailsComponent,
     RaceDetailsComponent,
     EquipmentDetailsComponent,
     LoginComponent,
@@ -94,14 +95,18 @@ import { NearestServicesComponent } from './views/race/nearest-services/nearest-
     RiderUpdateComponent,
     RaceUpdateComponent,
     EquipmentUpdateComponent,
-    TrainingCampUpdateComponent,
-    AdminComponent,
     RaceNavigationComponent,
     RaceSummaryComponent,
     RaceAccomodationComponent,
     RaceRidersComponent,
     RaceCalendarComponent,
-    NearestServicesComponent
+    NearestServicesComponent,
+    RegisterAccountComponent,
+    UsersComponent,
+    AdminBoardComponent,
+    UserDetailsComponent,
+    AddUserComponent,
+    AccountActivationComponent
   ],
   imports: [
     NgbModalModule,
@@ -121,9 +126,7 @@ import { NearestServicesComponent } from './views/race/nearest-services/nearest-
     }),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerImmediately'
     }),
 
     FlexLayoutModule,
@@ -146,7 +149,7 @@ import { NearestServicesComponent } from './views/race/nearest-services/nearest-
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
-  providers: [ { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },],
+  providers: [ { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

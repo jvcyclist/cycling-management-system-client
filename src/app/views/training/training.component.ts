@@ -14,7 +14,7 @@ export class TrainingComponent implements OnInit {
   trainingMock: TrainingMock = new TrainingMock();
   trainingArray: Training[] = [];
   
-  columnsToDisplay = ['id', 'date', 'type', 'kind', 'distance', 'description', 'actions'];
+  columnsToDisplay = ['id', 'date', 'type', 'kind', 'distance', 'actions'];
 
   constructor(private trainingService: TrainingService) { }
 

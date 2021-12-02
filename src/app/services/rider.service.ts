@@ -18,6 +18,10 @@ export class RiderService {
     return this.http.get<Rider[]>(this.url);
   }
 
+  getRidersWithSoonExpirationOfMedicalCard(): Observable<Rider[]>{
+    return this.http.get<Rider[]>(this.url + '?mode=medical-card-soon-expired');
+  }
+
   getRiderById(id: number): Observable<Rider>{
     return this.http.get<Rider>(this.url+'/'+id);
   }

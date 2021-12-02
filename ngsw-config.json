@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
-  "assetGroups": [
+  "assetGroups": [  
     {
       "name": "app",
       "installMode": "prefetch",
@@ -26,5 +26,44 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+    "name" : "races",
+    "urls" : [
+      "http://localhost:8080/api/races"
+    ], 
+    "cacheConfig": {
+      "maxSize": 5,
+      "maxAge": "6h",
+      "timeout": "10s",
+      "strategy": "freshness"
+    }
+   },
+   {
+    "name" : "rider",
+    "urls" : [
+      "http://localhost:8080/api/rider"
+    ], 
+    "cacheConfig": {
+      "maxSize": 5,
+      "maxAge": "6h",
+      "timeout": "10s",
+      "strategy": "freshness"
+    }
+   },
+   {
+    "name" : "medical-card",
+    "urls" : [
+      "http://localhost:8080/api/medical-card"
+    ], 
+    "cacheConfig": {
+      "maxSize": 5,
+      "maxAge": "6h",
+      "timeout": "10s",
+      "strategy": "freshness"
+    }
+   }
   ]
+
 }

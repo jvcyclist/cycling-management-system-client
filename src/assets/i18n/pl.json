@@ -26,7 +26,9 @@
         "training-camps": "Zgrupowania",
         "riders": "Zawodnicy",
         "equipment": "Sprzęt",
-        "logout": "Wyloguj"
+        "logout": "Wyloguj",
+        "login": "Zaloguj się",
+        "admin": "Panel administracyjny"
     },
 
     "training" : {
@@ -93,7 +95,7 @@
         "address" : "Adres",
         "address-preview": "Podgląd adresu",
         "achievements-preview" : "Podgląd osiągnięć",
-        "achievements-medical-cards" : "Podgląd badań lekarskich"
+        "medical-cards" : "Podgląd badań lekarskich"
     },
 
     "rider-address" : {
@@ -169,5 +171,33 @@
         ,  "restaurant" : {
             "title" : "Gastronomia"
         }
-    }
+    },
+    "login" : {
+        "userNamePlaceHolder" : "Nazwa użytkownika",
+        "passwordPlaceHolder" : "Hasło",
+        "login" : "Zaloguj",
+        "forgot-password" : "Zapomniałeś hasła?",
+        "remember-me" : "Zapamiętaj mnie"
+    },
+    "admin" : {
+        "register-account" : {
+            "loginPlaceHolder" : "Wpisz login",
+            "emailPlaceHolder" : "Wpisz adres e-mail",
+            "firstNamePlaceHolder" : "Wpisz imię użytkownika",
+            "lastNamePlaceHolder" : "Wpisz nazwisko użytkownika"
+        }
+    },
+    
+    "user": {
+        "title" : "Podgląd użytkownika",
+        "id" : "Id",
+        "username" : "Nazwa użytkownika",
+        "email" : "Adres e-mail",
+        "firstName" : "Imię",
+        "lastName" : "Nazwisko",
+        "accountStatus" : "Status konta"
+      }
+
+
+    
 }

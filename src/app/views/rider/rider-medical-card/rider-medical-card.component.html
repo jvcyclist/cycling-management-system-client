@@ -16,7 +16,7 @@
             </tr>
             <tr>
                 <td class="entity-attribute-title">{{ 'medical-card.validToDate' | translate }}</td>
-                <input type="date" [(ngModel)]="newMedicalCard.validTo">
+                <input type="date"  datetime="dd.MM.yyyy" [(ngModel)]="newMedicalCard.validTo">
             </tr>
             <tr>
                 <td class="entity-attribute-title">{{ 'medical-card.comment' | translate }}</td>
@@ -44,11 +44,11 @@
                 </tr>
                 <tr>
                     <td class="entity-attribute-title">{{ 'medical-card.validFromDate' | translate }}</td>
-                    <input [disabled]="!isEditable[i]" type="date" [(ngModel)]="medicalCard.validFrom">
+                    <input [disabled]="!isEditable[i]" type="date"[ngModel]="medicalCard.validFrom | date:'yyyy-MM-dd'">
                 </tr>
                 <tr>
                     <td class="entity-attribute-title">{{ 'medical-card.validToDate' | translate }}</td>
-                    <input [disabled]="!isEditable[i]" type="date" [(ngModel)]="medicalCard.validTo">
+                    <input [disabled]="!isEditable[i]" type="date" [ngModel]="medicalCard.validTo | date:'yyyy-MM-dd'">
                 </tr>
                 <tr>
                     <td class="entity-attribute-title">{{ 'medical-card.comment' | translate }}</td>

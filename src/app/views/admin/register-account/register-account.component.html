@@ -1,0 +1,35 @@
+<div class="container">
+	<div class="d-flex justify-content-center h-100 w-100">
+		<div class="card">
+
+			<div class="card-body">
+				<form [formGroup]="form" (submit)="submit()">
+                    <div class="input-group form-group">
+						<input formControlName="username" type="text" class="form-control" placeholder="{{'admin.register-account.loginPlaceHolder' | translate }}">
+					</div>
+					<br>
+                    <div class="input-group form-group">
+						<input  formControlName="email" type="text" class="form-control" placeholder="{{'admin.register-account.emailPlaceHolder' | translate }}">
+					</div>
+					<br>
+                    <div class="input-group form-group">
+						<input formControlName="firstName"type="text" class="form-control" placeholder="{{'admin.register-account.firstNamePlaceHolder' | translate }}">
+					</div>
+					<br>
+                    <div class="input-group form-group">
+						<input formControlName="lastName"type="text" class="form-control" placeholder="{{'admin.register-account.lastNamePlaceHolder' | translate }}">
+					</div>
+					<br>
+					<div class="form-group">
+						<input type="submit" value="Zarejestruj" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center">
+					<a href="#">Zapomniałeś hasła?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

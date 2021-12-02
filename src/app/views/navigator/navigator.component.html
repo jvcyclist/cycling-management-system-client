@@ -1,24 +1,35 @@
 
 <div style="text-align: center;">
     <h1>{{title}}</h1>
+    <div *ngIf="currentUser"> Witaj {{currentUser.username}} !</div>
+    
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="tab-title-container">
-  <ng-container [ngSwitch]="tabTitle">
+  <ng-container *ngIf="currentUser" [ngSwitch]="tabTitle">
     <a class="navbar-brand" *ngSwitchCase="'MAIN'">{{'navigator.main' | translate | uppercase }}</a>
     <a class="navbar-brand" *ngSwitchCase="'TRAINING'">{{'navigator.trainings' | translate | uppercase }}</a>
     <a class="navbar-brand" *ngSwitchCase="'RACE'">{{'navigator.races' | translate | uppercase }}</a>
     <a class="navbar-brand" *ngSwitchCase="'TRAINING-CAMP'">{{'navigator.training-camps' | translate | uppercase }}</a>
     <a class="navbar-brand" *ngSwitchCase="'RIDER'">{{'navigator.riders' | translate | uppercase }}</a>
     <a class="navbar-brand" *ngSwitchCase="'EQUIPMENT'">{{'navigator.equipment' | translate | uppercase }}</a>
+    <a class="navbar-brand" *ngSwitchCase="'ADMIN'">{{'navigator.admin' | translate | uppercase }}</a>
   </ng-container>
+
+  <ng-container *ngIf="!currentUser" [ngSwitch]="tabTitle">
+    <a class="navbar-brand" *ngSwitchCase="'MAIN'">{{'navigator.login' | translate | uppercase }}</a>
+  </ng-container>
+
 </div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" (click)="toggleCollapsed()" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+  <button *ngIf="currentUser" class="navbar-toggler" type="button" data-toggle="collapse" (click)="toggleCollapsed()" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText"  [ngbCollapse]="isCollapsed">
     <div style="padding-left: 10px;">
-      <ul class="navbar-nav mr-auto">
+      <ul *ngIf="currentUser"  class="navbar-nav mr-auto">
+        <li *ngIf="isUserHasRole('ROLE_ADMIN')" class="nav-item">
+          <a class="nav-link" routerLink="/admin" (click)="changeActiveTabTitle('MAIN')"> {{'navigator.admin' | translate }}</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/main" (click)="changeActiveTabTitle('MAIN')"> {{'navigator.main' | translate }}</a>
         </li>
@@ -35,7 +46,7 @@
           <a class="nav-link" routerLink="/equipment" (click)="changeActiveTabTitle('EQUIPMENT')">{{'navigator.equipment' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" (click)="downloadPDFTEST()"> {{'navigator.logout' | translate }}</a>
+          <a class="nav-link" (click)="logout()"> {{'navigator.logout' | translate }}</a>
         </li>
       </ul>
     </div>

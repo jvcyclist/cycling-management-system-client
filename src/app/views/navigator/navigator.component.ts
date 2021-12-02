@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import jsPDF from 'jspdf';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-navigator',
@@ -10,11 +12,16 @@ export class NavigatorComponent implements OnInit {
 
   title = 'Cycling Management App'
 
+  sarray: string[] = [];
+
   tabTitle: string = 'MAIN';
 
-  constructor() { }
+  currentUser: any;
+
+  constructor(private token: TokenStorageService, private route: Router) { }
 
   ngOnInit(): void {
+    this.currentUser = this.token.getUser();
   }
 
   isCollapsed = true;
@@ -22,17 +29,18 @@ export class NavigatorComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
   }
 
-
   changeActiveTabTitle(tabTitle: string): void {
     this.tabTitle = tabTitle;
+    this.isCollapsed = true
   }
 
-  downloadPDFTEST(){
-    const doc = new jsPDF();
+  logout(){
+    this.token.signOut();
+    this.route.navigateByUrl('/login').then(() => window.location.reload());
+  }
 
-
-    doc.text("Hello world!", 50, 50);
-    doc.save("a5.pdf");
+  isUserHasRole(role: string): boolean {  
+    return this.currentUser.roles.includes(role);
   }
 
 }

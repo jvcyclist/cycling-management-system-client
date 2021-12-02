@@ -61,11 +61,6 @@ export class NearestServicesService {
                       + '&key=' + this.googleApiKey);
 
     return this.http.get(requestUrl);
-    /*
-    return this.http.get((this.googleApiUrl + '/json' 
-                          + 'input=' +  this.inputTextApiBuilder(address, keyword)
-                          + '&fields=' + this.fields.join('%2C')
-                          + 'key=' + this.googleApiKey))*/
                           
   }
 

@@ -17,6 +17,10 @@ export class RaceService {
     return this.http.get<Race[]>(this.url);
   }
   
+  getNearestRaces(): Observable<Race[]> {
+    return this.http.get<Race[]>(this.url + '?mode=nearest-races');
+  }
+  
   getRaceById(id: number): Observable<Race> {
     return this.http.get<Race>(this.url + '/' + id)
   }

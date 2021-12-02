@@ -1,21 +1,31 @@
-<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
-    <div [ngClass]="{ 'has-error': f.submitted && !username.valid }">
-        <label for="username">Username</label>
-        <input type="text"
-          name="username" [(ngModel)]="model.username"
-            #username="ngModel" required />
-        <div *ngIf="f.submitted
-          && !username.valid">Username is required</div>
-    </div>
-    <div [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-        <label for="password">Password</label>
-        <input type="password"
-          name="password" [(ngModel)]="model.password"
-            #password="ngModel" required />
-        <div *ngIf="f.submitted
-          && !password.valid">Password is required</div>
-    </div>
-    <div>
-        <button [disabled]="loading">Login</button>
-    </div>
-</form>
+<div class="container">
+	<div *ngIf="errorMessage">{{errorMessage}}</div>
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-body">
+				<form [formGroup]="form" (submit)="onSubmit()">
+					<div class="input-group form-group">
+						<input formControlName="username" type="text" class="form-control" placeholder="{{'login.userNamePlaceHolder' | translate }}">
+					</div>
+          <br>
+					<div class="input-group form-group">
+						<input formControlName="password" type="password" class="form-control" placeholder="{{'login.passwordPlaceHolder' | translate }}">
+					</div>
+          <br>
+					<div class="row align-items-center remember">
+						<input type="checkbox">{{'login.remember-me' | translate }}
+					</div>
+          <br>
+					<div class="form-group">
+						<input type="submit" value="{{'login.login' | translate }}" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center">
+					<a href="#">{{'login.forgot-password' | translate }}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
