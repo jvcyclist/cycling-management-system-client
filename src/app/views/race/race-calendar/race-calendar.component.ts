@@ -29,6 +29,7 @@ import {
   CalendarView,
 } from 'angular-calendar';
 import { RaceService } from 'src/app/services/race.service';
+import { Route, Router } from '@angular/router';
 
 const colors: any = {
   red: {
@@ -91,7 +92,8 @@ export class RaceCalendarComponent implements OnInit {
 
   constructor(
     private modal: NgbModal,
-    private raceService: RaceService
+    private raceService: RaceService,
+    private route: Router
     ) {}
   ngOnInit(): void {
     registerLocaleData(localePl);
@@ -99,6 +101,7 @@ export class RaceCalendarComponent implements OnInit {
       races => races.forEach(race => {
         this.events.push(
           {
+            id: race.id,
             start: new Date(race.startDate!),
             end: new Date(race.endDate!),
             title: race.title!,
@@ -149,8 +152,10 @@ export class RaceCalendarComponent implements OnInit {
   }
 
   handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
+    console.log('handle event!!!')
+    this.route.navigateByUrl('/race/'+ event.id)
+    //this.modalData = { event, action };
+    //this.modal.open(this.modalContent, { size: 'lg' });
   }
 
   addEvent(): void {

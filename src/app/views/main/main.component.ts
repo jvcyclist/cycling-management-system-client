@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MedicalCard } from 'src/app/models/medical-card.model';
 import { Race } from 'src/app/models/race.model';
 import { Rider } from 'src/app/models/rider.model';
 import { RaceService } from 'src/app/services/race.service';
@@ -38,17 +39,26 @@ export class MainComponent implements OnInit {
   }
 
   daysRemains(date: Date): number{
-    console.log(date.toUTCString)
+    var valueOfDate: number = Date.parse(date.toString());
+   // console.log("Date value: " + valueOfDate)
+
+    var todayDate = new Date().valueOf();
 
 
-
-  //  console.log('date ' + date)
-    var todayDate = new Date().valueOf() - date.valueOf();
-  //  console.log('date valueo: '  + date.getTime());
-    var diff = date.valueOf() - todayDate.valueOf();
- //   console.log(diff);
-   // var diffDays = Math.ceil((date.valueOf() - todayDate.valueOf()) / (1000 * 3600 * 24)); 
-    return 0;
+    var diff = valueOfDate - todayDate.valueOf();
+    console.log(diff.valueOf());
+    var diffDays = Math.ceil((valueOfDate - todayDate) / (1000 * 3600 * 24)); 
+    console.log('Diff days: ' + diffDays)
+    return diffDays;
   }
 
+  getLatestMedicalCard(medicalCards: MedicalCard[]): MedicalCard{
+    var medicalCard = medicalCards.reduce(
+      function(a, b) {
+        return a.validTo!.valueOf() ! > b.validTo!.valueOf() ? a : b;
+      }
+    );
+    console.log('return MedicalCard vt Date: ' + medicalCard.validTo)
+      return medicalCard;
+  }
 }

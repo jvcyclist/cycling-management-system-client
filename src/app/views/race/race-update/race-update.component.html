@@ -10,15 +10,32 @@
         </tr>
         <tr>
             <td class="entity-attribute-title">{{ 'race.startDate' | translate }}</td>
-            <td><input type="date" [ngModel]="race.startDate | date:'yyyy-MM-dd'"></td>
+            <td><input type="date" [ngModel]="race.startDate | date:'yyyy-MM-dd'" (ngModelChange)="race.startDate = $event" type="date" name="startDate"></td>
         </tr>
         <tr>
             <td class="entity-attribute-title">{{ 'race.endDate' | translate }}</td>
-            <td><input type="date" [ngModel]="race.endDate | date:'yyyy-MM-dd'"></td>
+            <td><input type="date" [ngModel]="race.endDate | date:'yyyy-MM-dd'" (ngModelChange)="race.endDate = $event" type="date" name="endDate"></td>
         </tr>
         <tr>
             <td class="entity-attribute-title">{{ 'race.url' | translate }}</td>
             <td><input type="text" [(ngModel)]="race.url"></td>
+        </tr>
+        <tr>
+            <td class="entity-attribute-title">Kategorie</td>
+            <td>            <select name="category" id="categories">
+                <option value="volvo">ZAK</option>
+                <option value="saab">ZACZKA</option>
+                <option value="mercedes">MLODZIK</option>
+                <option value="audi">MLODZICZKA</option>
+                <option value="mercedes">JUNIOR ML</option>
+                <option value="audi">JUNIORKA ML</option>
+                <option value="mercedes">JUNIOR</option>
+                <option value="audi">JUNIORKA</option>
+                <option value="mercedes">ORLIK</option>
+                <option value="audi">ORLICZKA</option>
+                <option value="mercedes">ELITA M</option>
+                <option value="audi">ELITA K</option>
+              </select>
         </tr>
     </table>
     <div class="d-flex justify-content-between">

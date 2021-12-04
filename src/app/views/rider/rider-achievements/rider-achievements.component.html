@@ -66,7 +66,7 @@
                 </tr>
                 <tr>
                     <td class="entity-attribute-title">{{ 'achievement.date' | translate }}</td>
-                    <td><input [disabled]="!isEditable[i]" type="date" [ngModel]="achievement.achievementDate  | date:'yyyy-MM-dd'"></td>
+                    <td><input [disabled]="!isEditable[i]" type="date" [ngModel]="achievement.achievementDate  | date:'yyyy-MM-dd'" (ngModelChange)="achievement.achievementDate = $event" type="date" name="achievementDate"></td>
                 </tr>
                 <div class="d-flex justify-content-between">
                     <ng-container [ngSwitch]="isEditable[i]">

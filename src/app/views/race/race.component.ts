@@ -14,7 +14,7 @@ export class RaceComponent implements OnInit {
   raceMock: RaceMock = new RaceMock();
   races: Race[] = [];
 
-  columnsToDisplay = ['id', 'title', 'startDate', 'endDate','url' , 'actions'];
+  columnsToDisplay = ['id', 'title', 'startDate', 'actions'];
 
   constructor(private raceService: RaceService) { }
 

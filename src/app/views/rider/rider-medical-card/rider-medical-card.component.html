@@ -44,11 +44,11 @@
                 </tr>
                 <tr>
                     <td class="entity-attribute-title">{{ 'medical-card.validFromDate' | translate }}</td>
-                    <input [disabled]="!isEditable[i]" type="date"[ngModel]="medicalCard.validFrom | date:'yyyy-MM-dd'">
+                    <input [disabled]="!isEditable[i]" type="date"[ngModel]="medicalCard.validFrom | date:'yyyy-MM-dd'"  (ngModelChange)="medicalCard.validFrom = $event" type="date" name="validFrom">
                 </tr>
                 <tr>
                     <td class="entity-attribute-title">{{ 'medical-card.validToDate' | translate }}</td>
-                    <input [disabled]="!isEditable[i]" type="date" [ngModel]="medicalCard.validTo | date:'yyyy-MM-dd'">
+                    <input [disabled]="!isEditable[i]" [ngModel]="medicalCard.validTo | date:'yyyy-MM-dd'" (ngModelChange)="medicalCard.validTo = $event" type="date" name="validTo">
                 </tr>
                 <tr>
                     <td class="entity-attribute-title">{{ 'medical-card.comment' | translate }}</td>

@@ -2,14 +2,27 @@
 {{ 'rider-details.preview' | translate }}
 <div class="rider-update-container"> 
 <table>
-    <tr>
+    <tr [hidden]="id==0">
         <td class="entity-attribute-title">{{ 'rider-details.id' | translate }}</td>
         <td><input type="text" [(ngModel)]="rider.id"></td>
     </tr>
     <tr>
         <td class="entity-attribute-title">{{ 'rider-details.category' | translate }}</td>
         <td>
-            <input type="text" [(ngModel)]="rider.category!.name">
+            <select name="category" id="categories">
+                <option value="volvo">ZAK</option>
+                <option value="saab">ZACZKA</option>
+                <option value="mercedes">MLODZIK</option>
+                <option value="audi">MLODZICZKA</option>
+                <option value="mercedes">JUNIOR ML</option>
+                <option value="audi">JUNIORKA ML</option>
+                <option value="mercedes">JUNIOR</option>
+                <option value="audi">JUNIORKA</option>
+                <option value="mercedes">ORLIK</option>
+                <option value="audi">ORLICZKA</option>
+                <option value="mercedes">ELITA M</option>
+                <option value="audi">ELITA K</option>
+              </select>
         </td>
     </tr>
     <tr>

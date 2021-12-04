@@ -25,4 +25,12 @@ export class RaceService {
     return this.http.get<Race>(this.url + '/' + id)
   }
 
+  addRace(race: Race): Observable<Race>{
+     return this.http.post<Race>(this.url, race);
+  }
+
+  updateRace(race: Race): Observable<Race>{
+    return this.http.put<Race>(this.url, race);
+ }
+
 }

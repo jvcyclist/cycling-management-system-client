@@ -1,7 +1,8 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { race } from 'rxjs';
 import { RaceMock } from 'src/app/data-mocks/race-mock';
 
 import { Race } from 'src/app/models/race.model';
@@ -16,12 +17,12 @@ export class RaceUpdateComponent implements OnInit {
 
   id: number = 0;
 
-  raceMock: RaceMock = new RaceMock();
   race: Race = {id: 0, title: "", startDate: new Date(Date.now.toString()), endDate: new Date(Date.now.toString()), url: "" }
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private locate: Location,
-    private raceSerice: RaceService
+    private raceService: RaceService
   ) { 
 
   }
@@ -33,7 +34,7 @@ export class RaceUpdateComponent implements OnInit {
         console.log("ID from RaceUpdateComponent : " + this.id);
         if (this.id !== null && this.id !== 0) {
           console.log('RaceUpdateComponent: ID is not null');
-          this.raceSerice.getRaceById(this.id).subscribe(
+          this.raceService.getRaceById(this.id).subscribe(
             race => this.race = race
           )
         } else {
@@ -48,7 +49,17 @@ export class RaceUpdateComponent implements OnInit {
   }
 
   onSave(): void {
-    console.log('RaceUpdateComponent:onSave works !')
+    if(this.id == 0){
+      this.raceService.addRace(this.race).subscribe(race => {
+        this.router.navigateByUrl('/race/'+ race.id)
+      })
+    } else {
+      this.raceService.updateRace(this.race).subscribe(race => {
+        this.router.navigateByUrl('/race/'+ race.id)
+      })
+    }
+
+
   }
 
 }
