@@ -10,7 +10,7 @@ import { Rider } from '../models/rider.model';
 })
 export class RiderService {
 
-  private url = environment.baseUrl + '/api/rider';
+  private url = environment.baseUrl + '/api/riders';
 
   constructor(private http: HttpClient) { }
 

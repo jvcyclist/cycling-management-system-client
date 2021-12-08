@@ -73,4 +73,11 @@ export class RiderMedicalCardComponent implements OnInit {
       }
     )
   }
+
+  onDelete(id: number) {
+    console.log('onDelete Works for ID: ' + id)
+    this.medicalCardService.delete(this.medicalCards[id].id!).subscribe(response => {
+      this.medicalCards = this.medicalCards.filter(mc => mc !== this.medicalCards[id])
+    })
+  }
 }

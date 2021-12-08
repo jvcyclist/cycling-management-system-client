@@ -9,7 +9,7 @@ import { Address } from '../models/address.model';
 })
 export class AddressService {
 
-  private url = environment.baseUrl + '/api/address';
+  private url = environment.baseUrl + '/api/addresses';
 
   constructor(private http: HttpClient) { }
 

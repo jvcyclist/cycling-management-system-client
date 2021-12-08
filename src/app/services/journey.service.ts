@@ -9,7 +9,7 @@ import { Journey } from '../models/journey.model';
 })
 export class JourneyService {
 
-  private url = environment.baseUrl + '/api/journey';
+  private url = environment.baseUrl + '/api/journeys';
 
   constructor(private http: HttpClient) { }
 

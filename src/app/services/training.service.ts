@@ -9,7 +9,7 @@ import { Training } from '../models/training.model';
 })
 export class TrainingService {
 
-  private url = environment.baseUrl + '/api/training';
+  private url = environment.baseUrl + '/api/trainings';
 
   constructor(private http: HttpClient) { }
 

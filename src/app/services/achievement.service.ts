@@ -9,7 +9,7 @@ import { Achievement } from '../models/achievement.model';
 })
 export class AchievementService {
 
-  private url = environment.baseUrl + '/api/achievement';
+  private url = environment.baseUrl + '/api/achievements';
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +19,10 @@ export class AchievementService {
 
   save(achievement: Achievement, riderId: number): Observable<Achievement>{
     return this.http.post<Achievement>(this.url + '?riderId=' + riderId, achievement)
+  }
+
+  delete(id: number): Observable<string> {
+    return this.http.delete<string>(this.url + '/' + id)
   }
 
 }

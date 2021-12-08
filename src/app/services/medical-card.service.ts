@@ -9,7 +9,7 @@ import { MedicalCard } from '../models/medical-card.model';
 })
 export class MedicalCardService {
 
-  private url = environment.baseUrl + '/api/medical-card';
+  private url = environment.baseUrl + '/api/medical-cards';
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +19,10 @@ export class MedicalCardService {
 
   save(medicalCard: MedicalCard, riderId: number): Observable<MedicalCard>{
     return this.http.post<MedicalCard>(this.url + '?riderId=' + riderId, medicalCard)
+  }
+
+  delete(id: number): Observable<string> {
+    return this.http.delete<string>(this.url + '/' + id)
   }
 
 }

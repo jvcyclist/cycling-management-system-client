@@ -73,4 +73,11 @@ export class RiderAchievementsComponent implements OnInit {
       return b.id! - a.id!;
     });
   }
+
+  onDelete(id: number) {
+    console.log('onDelete Works for ID: ' + id)
+    this.achievementService.delete(this.achievements[id].id!).subscribe(response => {
+      this.achievements = this.achievements.filter(mc => mc !== this.achievements[id])
+    })
+  }
 }

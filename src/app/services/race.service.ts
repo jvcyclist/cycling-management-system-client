@@ -33,4 +33,8 @@ export class RaceService {
     return this.http.put<Race>(this.url, race);
  }
 
+ deleteRace(id: number): Observable<string>{
+   return this.http.delete<string>(this.url + '/' + id);
+ }
+
 }

@@ -43,7 +43,7 @@
    {
     "name" : "rider",
     "urls" : [
-      "http://localhost:8080/api/rider"
+      "http://localhost:8080/api/riders"
     ], 
     "cacheConfig": {
       "maxSize": 5,
@@ -55,7 +55,7 @@
    {
     "name" : "medical-card",
     "urls" : [
-      "http://localhost:8080/api/medical-card"
+      "http://localhost:8080/api/medical-cards"
     ], 
     "cacheConfig": {
       "maxSize": 5,
