@@ -3,6 +3,11 @@ import { AchievementsMock } from 'src/app/data-mocks/achievements-mock';
 import { Achievement } from 'src/app/models/achievement.model';
 import { AchievementService } from 'src/app/services/achievement.service';
 
+import jsPDF from 'jspdf';
+import autoTable from 'jspdf-autotable'
+import { Rider } from 'src/app/models/rider.model';
+
+
 @Component({
   selector: 'app-rider-achievements',
   templateUrl: './rider-achievements.component.html',
@@ -10,11 +15,20 @@ import { AchievementService } from 'src/app/services/achievement.service';
 })
 export class RiderAchievementsComponent implements OnInit {
 
+
+
+  test: boolean = false
+
   @Input()
   id: number = 0;
 
   @Input()
+  rider: Rider = {};
+
+  @Input()
   achievements: Achievement[] = []
+
+  achievementsThisYear: Achievement[] = []
 
   achievementMock: AchievementsMock = new AchievementsMock();
 
@@ -24,6 +38,8 @@ export class RiderAchievementsComponent implements OnInit {
   
   isNewItemForm: boolean = false;
 
+  columnsToDisplay = ['id', 'range', 'city', 'description','place','date'];
+
   constructor(private achievementService: AchievementService) { }
 
   ngOnInit(): void {
@@ -32,8 +48,23 @@ export class RiderAchievementsComponent implements OnInit {
       this.isEditable.push(false);
     });
 
+    this.achievementService.getAchievementsByThisYearAndRiderId(this.rider.id!).subscribe(
+      achievements => {
+        this.achievementsThisYear = achievements;
+        this.achievementsThisYear = this.achievementsThisYear.sort(
+          (a: Achievement, b: Achievement) => {
+
+          return this.parseDate(a.achievementDate!).getTime() - this.parseDate(b.achievementDate!).getTime();
+        });
+      
+      
+      
+      
+      }
+    )
+    
     this.sortAchievementsByIdDesc();
- 
+   // this.achievementsThisYear = this.achievements.filter(({achievementDate})=> ['2021'].includes(achievementDate!.toDateString.slice(-4)))
   }
 
   onEdit(index: number): void {
@@ -80,4 +111,21 @@ export class RiderAchievementsComponent implements OnInit {
       this.achievements = this.achievements.filter(mc => mc !== this.achievements[id])
     })
   }
+  processReport(){
+  
+    var doc = new jsPDF('l', 'mm', [305, 250]);
+    doc.text('Data raportu: ' + new Date().toLocaleString(), 200, 15)
+    doc.text('Osiagniecia zawodnika z obecnego sezonu: ' + this.rider.firstName + ' ' + this.rider.lastName, 15, 15)
+    autoTable(doc, {html: '#achievements', startY: 30})
+    var concatedName = this.rider.lastName?.toUpperCase() + '_' + this.rider.firstName?.slice(0,1) + ' '
+    doc.save(concatedName + new Date().toLocaleString().replace(',','') + '.pdf')
+   
+  }
+
+   parseDate(input: any) {
+    var parts = input.match(/(\d+)/g);
+    // new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
+    return new Date(parts[2], parts[1]-1, parts[1]); // months are 0-based
+  }
+
 }

@@ -25,30 +25,24 @@ export class RaceAccomodationComponent implements OnInit {
   constructor(private journeyService: JourneyService) { }
 
   ngOnInit(): void {
-  console.log('JourneyID = ' + this.journey.address);
-
-    if (this.journey.accomodation?.address !== undefined)
-      {
+    if (this.journey.accomodation?.address !== undefined) {
         this.address = this.journey.accomodation?.address!;
       }
-    if (this.journey.accomodation !== undefined)
-      {
+    if (this.journey.accomodation !== undefined) {
         this.accomodation = this.journey.accomodation;
       }
   }
 
-  openFormForNewItem(){
+  openFormForNewItem() {
     this.isNewItemForm = true;
   }
 
-  onCreate(){
-    this.journey.address = this.address;
-    this.journey.accomodation = this.accomodation;
-
+  onCreate() {
+    this.journey.accomodation!.address = this.address;
     this.journeyService.saveJourney(this.journey, this.id).subscribe(
       journey => {
-        console.log('Saved !!');
-        this.journey = journey
+        this.journey = journey;
+        this.address = journey.accomodation?.address!;
         this.isEditable = false;
       }
     )

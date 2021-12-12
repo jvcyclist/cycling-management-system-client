@@ -21,8 +21,6 @@ export class RiderAddressComponent implements OnInit {
 
   isEditable: boolean = false;
 
-  //address: Address = this.addressMock.addresses[this.id];
-
   constructor(private addressService: AddressService) { }
 
   ngOnInit(): void {

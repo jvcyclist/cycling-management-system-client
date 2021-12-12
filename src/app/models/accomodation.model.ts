@@ -5,14 +5,14 @@ export interface IAccomodation {
     address?: Address,
     startDateTime?: Date,
     endDateTime?: Date
- 
+
 }
 
 export class Accomodation implements IAccomodation {
     constructor(public id?: number,
                 public address?: Address,
                 public startDateTime?: Date,
-                public endDateTime?: Date,
+                public endDateTime?: Date
     )
     {}
 }

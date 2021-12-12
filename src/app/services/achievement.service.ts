@@ -25,4 +25,11 @@ export class AchievementService {
     return this.http.delete<string>(this.url + '/' + id)
   }
 
+  getAchievementsByThisYearAndRiderId(riderId: number): Observable<Achievement[]>{
+    return this.http.get<Achievement[]>(this.url + 
+      '?mode=achievements-this-year' +
+      '&riderId=' + riderId
+      );
+  }
+
 }

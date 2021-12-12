@@ -5,15 +5,13 @@ import { Rider } from "./rider.model";
 export interface IJourney {
     id?: number
     accomodation?: Accomodation,
-    riders?: Rider[],
-    address?: Address
+    riders?: Rider[]
 }
 
 export class Journey implements IJourney {
     constructor(public id?: number,
                 public accomodation?: Accomodation,
-                public riders?: Rider[],
-                public address?: Address
+                public riders?: Rider[]
     )
     {}
 }

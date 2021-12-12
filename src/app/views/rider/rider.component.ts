@@ -14,18 +14,13 @@ import autoTable from 'jspdf-autotable'
 })
 export class RiderComponent implements OnInit {
   
-
-
   riderMock: RiderMock = new RiderMock();
   riderArray: Rider[] = [];
 
-
   columnsToDisplay = ['category', 'firstName', 'lastName', 'actions'];
-
 
   constructor(private riderService: RiderService) {
     
-
    }
 
   ngOnInit(): void {
