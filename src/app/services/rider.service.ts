@@ -34,4 +34,8 @@ export class RiderService {
     return this.http.delete<Response>(this.url+'/'+id)
   }
 
+  updateRider(rider: Rider): Observable<Rider>{
+    return this.http.put<Rider>(this.url, rider);
+  }
+
 }

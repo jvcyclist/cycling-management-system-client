@@ -37,10 +37,10 @@ export class RaceDetailsComponent implements OnInit {
         this.id = Number(params.get('id'));
         this.raceService.getRaceById(this.id).subscribe(
           race => {
-          this.race = race;
-          this.journey = race.journey!;
-        }
-        )
+            this.race = race;
+            this.journey = race.journey!;
+          }
+         )
       });
   }
 

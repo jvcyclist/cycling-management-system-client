@@ -9,19 +9,8 @@
     <tr>
         <td class="entity-attribute-title">{{ 'rider-details.category' | translate }}</td>
         <td>
-            <select name="category" id="categories">
-                <option value="volvo">ZAK</option>
-                <option value="saab">ZACZKA</option>
-                <option value="mercedes">MLODZIK</option>
-                <option value="audi">MLODZICZKA</option>
-                <option value="mercedes">JUNIOR ML</option>
-                <option value="audi">JUNIORKA ML</option>
-                <option value="mercedes">JUNIOR</option>
-                <option value="audi">JUNIORKA</option>
-                <option value="mercedes">ORLIK</option>
-                <option value="audi">ORLICZKA</option>
-                <option value="mercedes">ELITA M</option>
-                <option value="audi">ELITA K</option>
+              <select name="category" id="category" [(ngModel)]="category.name">
+                <option *ngFor="let categoryName of categoriesList" value="{{categoryName}}">{{categoryName}}</option>
               </select>
         </td>
     </tr>

@@ -38,6 +38,7 @@ export class RaceAccomodationComponent implements OnInit {
   }
 
   onCreate() {
+    this.journey.accomodation = this.accomodation;
     this.journey.accomodation!.address = this.address;
     this.journeyService.saveJourney(this.journey, this.id).subscribe(
       journey => {

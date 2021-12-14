@@ -1,3 +1,4 @@
+import { Category } from "./category.model";
 import { Journey } from "./journey.model";
 
 export interface IRace {
@@ -6,7 +7,8 @@ export interface IRace {
     startDate?: Date,
     endDate?: Date,
     url?: string,
-    journey?: Journey
+    journey?: Journey,
+    categories?: Category[]
 
 }
 
@@ -16,7 +18,8 @@ export class Race implements IRace {
                 public startDate?: Date,
                 public endDate?: Date,
                 public url?: string,
-                public journey?: Journey
+                public journey?: Journey,
+                public categories?: Category[]
     )
     {}
 }
