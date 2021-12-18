@@ -43,7 +43,6 @@ export class RiderAchievementsComponent implements OnInit {
   constructor(private achievementService: AchievementService) { }
 
   ngOnInit(): void {
-    console.log("ID from RiderAchievementsComponent : " + this.id);
     this.achievements.forEach(element => {
       this.isEditable.push(false);
     });
@@ -69,12 +68,9 @@ export class RiderAchievementsComponent implements OnInit {
 
   onEdit(index: number): void {
     this.isEditable[index] = true
-    console.log('Edited achievement item with index: ' + index)
   }
 
   onSave(index: number, achievement: Achievement){
-    console.log('Saved Achievement with index:' + index );
-    console.log('Saved Achievement :' + achievement.id );
     this.achievementService.update(achievement).subscribe(
       achievement => this.isEditable[index] = false
     )
@@ -106,7 +102,6 @@ export class RiderAchievementsComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    console.log('onDelete Works for ID: ' + id)
     this.achievementService.delete(this.achievements[id].id!).subscribe(response => {
       this.achievements = this.achievements.filter(mc => mc !== this.achievements[id])
     })
@@ -124,8 +119,7 @@ export class RiderAchievementsComponent implements OnInit {
 
    parseDate(input: any) {
     var parts = input.match(/(\d+)/g);
-    // new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
-    return new Date(parts[2], parts[1]-1, parts[1]); // months are 0-based
+    return new Date(parts[2], parts[1]-1, parts[1]);
   }
 
 }

@@ -38,4 +38,8 @@ export class RiderService {
     return this.http.put<Rider>(this.url, rider);
   }
 
+  getRidersByCategories(categories: string[]): Observable<Rider[]> {
+    return this.http.get<Rider[]>(this.url+'?categories=' + categories.join(','));
+  }
+
 }

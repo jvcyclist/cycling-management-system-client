@@ -6,6 +6,9 @@ import { AdminBoardComponent } from './views/admin/admin-board/admin-board.compo
 import { RegisterAccountComponent } from './views/admin/register-account/register-account.component';
 import { UserDetailsComponent } from './views/admin/user-details/user-details.component';
 import { UsersComponent } from './views/admin/users/users.component';
+import { BikeDetailsComponent } from './views/bike/bike-details/bike-details.component';
+import { BikeUpdateComponent } from './views/bike/bike-update/bike-update.component';
+import { BikeComponent } from './views/bike/bike.component';
 
 import { EquipmentDetailsComponent } from './views/equipment/equipment-details/equipment-details.component';
 import { EquipmentUpdateComponent } from './views/equipment/equipment-update/equipment-update.component';
@@ -45,10 +48,10 @@ const routes: Routes = [
   { path: 'riders/new', component: RiderUpdateComponent, canActivate: [AuthGuardService] },
   { path: 'rider/:id/edit', component: RiderUpdateComponent, canActivate: [AuthGuardService] },
 
-  { path: 'equipment', component: EquipmentComponent, canActivate: [AuthGuardService] },
-  { path: 'equipment/:id', component: EquipmentDetailsComponent, canActivate: [AuthGuardService] },
-  { path: 'equipments/new', component: EquipmentUpdateComponent, canActivate: [AuthGuardService] },
-  { path: 'equipment/:id/edit', component: EquipmentUpdateComponent, canActivate: [AuthGuardService] },
+  { path: 'bike', component: BikeComponent, canActivate: [AuthGuardService] },
+  { path: 'bike/:id', component: BikeDetailsComponent, canActivate: [AuthGuardService] },
+  { path: 'bike/new', component: BikeUpdateComponent, canActivate: [AuthGuardService] },
+  { path: 'bike/:id/edit', component: BikeUpdateComponent, canActivate: [AuthGuardService] },
 
   { path: 'admin', component: AdminBoardComponent, canActivate: [AuthGuardService] },
   { path: 'admin/register-account', component: RegisterAccountComponent, canActivate: [AuthGuardService]},

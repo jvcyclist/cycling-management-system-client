@@ -38,12 +38,16 @@
         </tr>
         <tr>
                 <td class="entity-attribute-title">Kategorie</td>
-                <ul >
-                    <div style="display: flex;" *ngFor="let category of race.categories">
-                    <div>{{category.name}}</div>
-                    <a (click)="deleteCategory(category.name)" type="button" class="btn btn-danger btn-sm">-</a>
-                    </div>
-                  </ul>
+
+                  <table>
+                    <tr *ngFor="let category of race.categories">
+                      <td>{{category.name}}</td>
+                      <td> <a (click)="deleteCategory(category.name)" type="button" class="btn btn-danger btn-sm">-</a></td>
+                    </tr>
+                  </table>
+
+
+
         </tr>
     </table>
     <div class="d-flex justify-content-between">

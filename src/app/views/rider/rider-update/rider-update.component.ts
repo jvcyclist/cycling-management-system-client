@@ -55,7 +55,6 @@ export class RiderUpdateComponent implements OnInit {
   onSave(): void {
     if (this.id !== 0) {
       this.rider.category!.name = this.category.name;
-      console.log('riderOnSaveUpte:: ' + this.rider.category?.name )
       this.riderService.updateRider(this.rider).subscribe(
         rider => {
           this.router.navigateByUrl('/rider/' + rider.id)
@@ -69,7 +68,4 @@ export class RiderUpdateComponent implements OnInit {
 
   }
 
-  onChange(test: any) {
-    console.log('new value ! '+ test)
-  }
 }

@@ -24,8 +24,6 @@ export class RiderAddressComponent implements OnInit {
   constructor(private addressService: AddressService) { }
 
   ngOnInit(): void {
-    console.log("ID from RiderAddressComponent : " + this.id);
-    console.log(this.address);
   }
 
 

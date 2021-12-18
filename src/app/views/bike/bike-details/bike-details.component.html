@@ -1,0 +1,34 @@
+{{ 'bike.preview' | translate }}
+<div class="bike-details-container">
+    
+<table>
+    <tr>
+        <td class="entity-attribute-title">{{ 'bike.id' | translate }}</td>
+        <td>{{bike.id }}</td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'bike.referenceNumber' | translate }}</td>
+        <td>{{bike.referenceNumber }}</td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'bike.mark' | translate }}</td>
+        <td>{{bike.mark}}</td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'bike.model' | translate }}</td>
+        <td>{{bike.model}}</td>
+    </tr>
+    <tr>
+        <td class="entity-attribute-title">{{ 'bike.type' | translate }}</td>
+        <td>{{bike.type}}</td>
+    </tr>
+<hr>
+<div>{{ 'bike.history' | translate }}</div>
+<hr>
+
+  </table>
+  <div class="d-flex justify-content-between">
+      <button (click)="onBack()" type="button" class="btn btn-primary">{{ 'common-actions.back' | translate }}</button>
+      <button type="button" class="btn btn-info" routerLink="/bike/{{bike.id}}/edit">{{ 'common-actions.edit' | translate }}</button>
+  </div>
+</div>

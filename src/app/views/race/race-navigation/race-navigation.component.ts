@@ -15,7 +15,6 @@ export class RaceNavigationComponent implements OnInit {
   }
 
   onChangeView(viewName: string){
-    console.log('Emitted!');
     this.viewName.emit(viewName)
   }
 

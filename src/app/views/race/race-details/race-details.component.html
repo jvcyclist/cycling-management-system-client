@@ -2,7 +2,7 @@
 <ng-container [ngSwitch]="viewName">
     <app-race-summary [id]="id" *ngSwitchCase="'SUMMARY'"></app-race-summary>
     <app-race-accomodation [id]="id" [journey]="journey" *ngSwitchCase="'ACCOMODATION'"></app-race-accomodation>
-    <app-race-riders [id]="id" [journey]="journey" *ngSwitchCase="'RIDERS'"></app-race-riders>
+    <app-race-riders [id]="id" [categories]="categories" [journey]="journey" *ngSwitchCase="'RIDERS'"></app-race-riders>
     <app-nearest-services [journey]="journey" *ngSwitchCase="'SERVICES'"></app-nearest-services>
 
 

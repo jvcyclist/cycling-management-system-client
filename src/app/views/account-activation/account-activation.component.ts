@@ -40,7 +40,6 @@ export class AccountActivationComponent implements OnInit {
 
   submit(){
     this.http.post(this.url, this.form.getRawValue()).subscribe(response => this.router.navigateByUrl('/login'))
-    console.log(this.form.getRawValue())
   }
 
 }

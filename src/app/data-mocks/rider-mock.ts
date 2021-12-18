@@ -8,43 +8,64 @@ export class RiderMock{
             id: 1,
             firstName: "Tomek",
             lastName: "Nowal",
-            licenseNo: "NO000001"
+            licenseNo: "NO000001",
+            category: {
+                name: "ZAK"
+            }
         },
         {
             id: 2,
             firstName: "Adam",
             lastName: "Abacki",
-            licenseNo: "NO000002"
+            licenseNo: "NO000002",
+            category: {
+                name: "MLODZIK"
+            }
         },
         {
             id: 3,
             firstName: "Piotr",
             lastName: "Kolarski",
-            licenseNo: "NO000003"
+            licenseNo: "NO000003",
+            category: {
+                name: "ZAK"
+            }
         },
         {
             id: 4,
             firstName: "Tomek",
             lastName: "Nowal",
-            licenseNo: "NO000004"
+            licenseNo: "NO000004",
+            category: {
+                name: "ZAK"
+            }
         },
         {
             id: 5,
             firstName: "Hubert",
             lastName: "Wisniewski",
-            licenseNo: "NO000005"
+            licenseNo: "NO000005",
+            category: {
+                name: "ZAK"
+            }
         },
         {
             id: 6,
             firstName: "Andrzej",
             lastName: "Sapkowski",
-            licenseNo: "NO000006"
+            licenseNo: "NO000006",
+            category: {
+                name: "ZAK"
+            }
         },
         {
             id: 7,
             firstName: "Geralt",
             lastName: "Z Rivii",
-            licenseNo: "NO000007"
+            licenseNo: "NO000007",
+            category: {
+                name: "ZAK"
+            }
         },
        
 

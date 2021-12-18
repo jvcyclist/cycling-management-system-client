@@ -36,9 +36,7 @@ export class RaceUpdateComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params: ParamMap) => {
         this.id = Number(params.get('id'));
-        console.log("ID from RaceUpdateComponent : " + this.id);
         if (this.id !== null && this.id !== 0) {
-          console.log('RaceUpdateComponent: ID is not null');
           this.raceService.getRaceById(this.id).subscribe(
             race => {
               this.race = race

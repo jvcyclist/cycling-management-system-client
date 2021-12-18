@@ -12,7 +12,7 @@
     <a class="navbar-brand" *ngSwitchCase="'RACE'">{{'navigator.races' | translate | uppercase }}</a>
     <a class="navbar-brand" *ngSwitchCase="'TRAINING-CAMP'">{{'navigator.training-camps' | translate | uppercase }}</a>
     <a class="navbar-brand" *ngSwitchCase="'RIDER'">{{'navigator.riders' | translate | uppercase }}</a>
-    <a class="navbar-brand" *ngSwitchCase="'EQUIPMENT'">{{'navigator.equipment' | translate | uppercase }}</a>
+    <a class="navbar-brand" *ngSwitchCase="'BIKE'">{{'navigator.bike' | translate | uppercase }}</a>
     <a class="navbar-brand" *ngSwitchCase="'ADMIN'">{{'navigator.admin' | translate | uppercase }}</a>
   </ng-container>
 
@@ -43,7 +43,7 @@
           <a class="nav-link" routerLink="/rider" (click)="changeActiveTabTitle('RIDER')"> {{'navigator.riders' | translate }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/equipment" (click)="changeActiveTabTitle('EQUIPMENT')">{{'navigator.equipment' | translate }}</a>
+          <a class="nav-link" routerLink="/bike" (click)="changeActiveTabTitle('BIKE')">{{'navigator.bike' | translate }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" (click)="logout()"> {{'navigator.logout' | translate }}</a>

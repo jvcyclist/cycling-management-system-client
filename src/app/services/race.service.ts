@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Race } from '../models/race.model';
+import { Rider } from '../models/rider.model';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,9 @@ export class RaceService {
  deleteRace(id: number): Observable<string>{
    return this.http.delete<string>(this.url + '/' + id);
  }
+
+updateRiders(id: number, riders: Rider[]): Observable<Race> {
+  return this.http.put<Race>(this.url + '/' + id + '/riders', riders)
+}
 
 }

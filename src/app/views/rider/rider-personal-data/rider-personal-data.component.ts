@@ -27,7 +27,6 @@ export class RiderPersonalDataComponent implements OnInit {
 
   ngOnInit(): void {
     this.rider.category = {name: "INIT"};
-    console.log("ID from RiderPersonalDataComponent : " + this.id);
     this.route.paramMap.subscribe(
       (params: ParamMap) => {
         this.id = Number(params.get('id'));

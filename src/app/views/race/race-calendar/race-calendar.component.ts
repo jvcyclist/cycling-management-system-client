@@ -152,7 +152,6 @@ export class RaceCalendarComponent implements OnInit {
   }
 
   handleEvent(action: string, event: CalendarEvent): void {
-    console.log('handle event!!!')
     this.route.navigateByUrl('/race/'+ event.id)
     //this.modalData = { event, action };
     //this.modal.open(this.modalContent, { size: 'lg' });

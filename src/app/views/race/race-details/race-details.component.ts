@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { RaceMock } from 'src/app/data-mocks/race-mock';
 import { Address } from 'src/app/models/address.model';
+import { Category } from 'src/app/models/category.model';
 import { Journey } from 'src/app/models/journey.model';
 
 import { Race } from 'src/app/models/race.model';
@@ -24,6 +25,7 @@ export class RaceDetailsComponent implements OnInit {
 
   riders: Rider[]= [];
   journey: Journey = {};
+  categories: Category[] = []
 
   constructor(
     private route: ActivatedRoute,
@@ -39,6 +41,7 @@ export class RaceDetailsComponent implements OnInit {
           race => {
             this.race = race;
             this.journey = race.journey!;
+            this.categories = race.categories!;
           }
          )
       });

@@ -27,9 +27,7 @@ export class TrainingUpdateComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params: ParamMap) => {
         this.id = Number(params.get('id'));
-        console.log("ID from TrainingUpdateComponent : " + this.id);
         if (this.id !== null && this.id !== 0) {
-          console.log('TrainingUpdateComponent: ID is not null');
           this.trainingService.getTrainingById(this.id).subscribe(
             training => this.training = training
           )
@@ -46,7 +44,6 @@ export class TrainingUpdateComponent implements OnInit {
 
   onSave(): void {
     this.trainingService.updateTraining(this.training).subscribe(
-      training => console.log("Training updated!")
     );
   }
 

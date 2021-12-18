@@ -69,6 +69,9 @@ import { UserDetailsComponent } from './views/admin/user-details/user-details.co
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { AddUserComponent } from './views/admin-board/add-user/add-user.component';
 import { AccountActivationComponent } from './views/account-activation/account-activation.component';
+import { BikeComponent } from './views/bike/bike.component';
+import { BikeUpdateComponent } from './views/bike/bike-update/bike-update.component';
+import { BikeDetailsComponent } from './views/bike/bike-details/bike-details.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +109,10 @@ import { AccountActivationComponent } from './views/account-activation/account-a
     AdminBoardComponent,
     UserDetailsComponent,
     AddUserComponent,
-    AccountActivationComponent
+    AccountActivationComponent,
+    BikeComponent,
+    BikeUpdateComponent,
+    BikeDetailsComponent
   ],
   imports: [
     NgbModalModule,

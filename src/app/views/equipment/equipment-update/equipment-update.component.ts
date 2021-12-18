@@ -28,9 +28,7 @@ export class EquipmentUpdateComponent implements OnInit {
     this.route.paramMap.subscribe(
       (params: ParamMap) => {
         this.id = Number(params.get('id'));
-        console.log("ID from EquipmentUpdateComponent : " + this.id);
         if (this.id !== null && this.id !== 0) {
-          console.log('EquipmentUpdateComponent: ID is not null');
           this.equipment = this.equipmentMock.equipments[this.id - 1];
         } else {
           this.equipment = new Equipment();

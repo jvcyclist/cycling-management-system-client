@@ -23,7 +23,6 @@ export class RiderMedicalCardComponent implements OnInit {
   constructor(private medicalCardService: MedicalCardService) { }
 
   ngOnInit(): void {
-    console.log("ID from RiderMedicalCardComponent : " + this.id);
    this.sortMedicalCardsByValidToDesc();
    this.medicalCards.forEach(element => {
      this.isEditable.push(false);
@@ -48,9 +47,6 @@ export class RiderMedicalCardComponent implements OnInit {
   }
 
   onSave(index: number, medicalCard: MedicalCard){
-    console.log("Saved Achievement from index: " + index);
-    console.log("Saved Achievement with id: " + medicalCard.id);
-    console.log("Saved Achievement with validTo : " + medicalCard.validTo);
     this.medicalCardService.update(medicalCard).subscribe(
       medicalCard => this.isEditable[index] = false
     )
@@ -75,7 +71,6 @@ export class RiderMedicalCardComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    console.log('onDelete Works for ID: ' + id)
     this.medicalCardService.delete(this.medicalCards[id].id!).subscribe(response => {
       this.medicalCards = this.medicalCards.filter(mc => mc !== this.medicalCards[id])
     })
