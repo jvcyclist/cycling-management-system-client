@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MedicalCardMock } from 'src/app/data-mocks/medical-card-mock';
 
 import { MedicalCard } from 'src/app/models/medical-card.model';
@@ -20,7 +21,8 @@ export class RiderMedicalCardComponent implements OnInit {
   newMedicalCard: MedicalCard = {};
 
   medicalCardsMock: MedicalCardMock = new MedicalCardMock();
-  constructor(private medicalCardService: MedicalCardService) { }
+  constructor(private medicalCardService: MedicalCardService,
+    private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
    this.sortMedicalCardsByValidToDesc();
@@ -66,6 +68,8 @@ export class RiderMedicalCardComponent implements OnInit {
         });
         this.sortMedicalCardsByValidToDesc();
         this.isNewItemForm = false;
+        //add snackbar 
+        this._snackBar.open('Dodano pomyślnie kartę', 'X', { duration: 2500,  panelClass: ['white-snackbar']})
       }
     )
   }
@@ -75,4 +79,6 @@ export class RiderMedicalCardComponent implements OnInit {
       this.medicalCards = this.medicalCards.filter(mc => mc !== this.medicalCards[id])
     })
   }
+
+
 }

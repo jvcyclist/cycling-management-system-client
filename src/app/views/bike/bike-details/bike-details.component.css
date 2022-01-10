@@ -9,3 +9,11 @@ td {
 .entity-attribute-title {
     font-weight: bold;
 }
+
+hr {
+    width: 100%;
+}
+table {
+    width: 100%;
+
+}

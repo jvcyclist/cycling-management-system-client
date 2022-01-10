@@ -50,7 +50,7 @@ const routes: Routes = [
 
   { path: 'bike', component: BikeComponent, canActivate: [AuthGuardService] },
   { path: 'bike/:id', component: BikeDetailsComponent, canActivate: [AuthGuardService] },
-  { path: 'bike/new', component: BikeUpdateComponent, canActivate: [AuthGuardService] },
+  { path: 'bikes/new', component: BikeUpdateComponent, canActivate: [AuthGuardService] },
   { path: 'bike/:id/edit', component: BikeUpdateComponent, canActivate: [AuthGuardService] },
 
   { path: 'admin', component: AdminBoardComponent, canActivate: [AuthGuardService] },

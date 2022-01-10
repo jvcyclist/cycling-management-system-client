@@ -1,5 +1,6 @@
 import { ThrowStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { RaceMock } from 'src/app/data-mocks/race-mock';
 import { RiderMock } from 'src/app/data-mocks/rider-mock';
@@ -17,10 +18,9 @@ import { RiderService } from 'src/app/services/rider.service';
 })
 export class RaceRidersComponent implements OnInit {
  
-  riderMock: RiderMock = new RiderMock();
 
   selectedRiderId: number = 0
-  ridersToAdd: Rider[] = this.riderMock.riders
+  ridersToAdd: Rider[] = []
   
 
   isNewItemForm: boolean = false;
@@ -42,7 +42,8 @@ export class RaceRidersComponent implements OnInit {
   constructor(private journeyService: JourneyService,
               private riderService: RiderService,
               private raceService: RaceService,
-              private route: Router
+              private route: Router,
+              private _snackBar: MatSnackBar
     ) { }
 
   ngOnInit(): void {
@@ -51,10 +52,7 @@ export class RaceRidersComponent implements OnInit {
                     ).subscribe(
                       riders => {
                       this.addedRiders = this.journey.riders!
-                      if(this.addedRiders.length > 0) {
                         this.ridersToAdd = riders.filter(rider => !this.addedRiders.map(r => r.id).includes(rider.id))
-                      }
-                      
                     }
                       
                       )
@@ -81,6 +79,7 @@ export class RaceRidersComponent implements OnInit {
     this.ridersToAdd = this.ridersToAdd.filter(rider => {return rider.id != this.selectedRiderId})
     this.selectedRiderId = 0;
     this.addedRiders = this.sortRidersByCategoryId(this.addedRiders)
+    this._snackBar.open('Dodano zawodnika', 'X', { duration: 2500,  panelClass: ['white-snackbar']})
     }
   }
 
@@ -89,12 +88,14 @@ export class RaceRidersComponent implements OnInit {
     this.ridersToAdd.push(this.addedRiders.filter(rider => { return rider.id == id})[0])
     this.addedRiders = this.addedRiders.filter(rider => {return rider.id != id})
     this.ridersToAdd = this.sortRidersByCategoryId(this.ridersToAdd);
+    this._snackBar.open('Usunięto zawodnika', 'X', { duration: 2500,  panelClass: ['white-snackbar']})
     }
   }
 
   updateRiders() {
     this.raceService.updateRiders(this.id, this.addedRiders).subscribe(res => {
       this.route.navigateByUrl('/race/' + this.id)
+      this._snackBar.open('Zaktualizowano zawodników', 'X', { duration: 2500,  panelClass: ['white-snackbar']})
     }
 
     )

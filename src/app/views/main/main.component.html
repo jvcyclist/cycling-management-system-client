@@ -1,4 +1,4 @@
-<h3 style="text-align: center;">Nadchodzące wyścigi</h3>
+<h3 style="text-align: center;">{{'main.upcoming-races' | translate}}</h3>
 
 <table *ngIf="nearestRaces.length > 0 else emptyRacesList" mat-table [dataSource]="nearestRaces">
    <ng-container matColumnDef="title">
@@ -6,7 +6,7 @@
        <td mat-cell *matCellDef="let race"> {{race.title}} </td>
    </ng-container>
    <ng-container matColumnDef="startDate">
-       <th mat-header-cell *matHeaderCellDef> Pozostało dni </th>
+       <th mat-header-cell *matHeaderCellDef> {{'main.days-left' | translate}} </th>
        <td mat-cell *matCellDef="let race" style="text-align: center;"> {{daysRemains(race.startDate)}} </td>
    </ng-container>
    <ng-container matColumnDef="actions">
@@ -25,14 +25,20 @@
    <tr mat-row *matRowDef="let race; columns: columnsToDisplayRaces"></tr>
    
    </table>
-   <ng-template #emptyRacesList style="color: #a2ff45">Brak zawodników z kończącycmi się badaniami lekarskimi</ng-template>
+   <ng-template #emptyRacesList style="color: #a2ff45; text-align: center;">
+    <div class="notifications">
+        {{'main.lack-of-near-races' | translate}}
+    </div>
+    
+
+</ng-template>
    <br>
    <br>
 <hr>
 <br>
-<h3 style="text-align: center;">Zawodnicy, którym kończą się badania</h3>
+<h3 style="text-align: center;">{{'main.upcoming-riders-medical-cards' | translate}}</h3>
 
-<table *ngIf="ridersWithMedicalExpiration.length !== null else emptyRidersList" mat-table [dataSource]="ridersWithMedicalExpiration">
+<table *ngIf="(ridersWithMedicalExpiration.length !== null && ridersWithMedicalExpiration.length > 0 ) else emptyRidersList" mat-table [dataSource]="ridersWithMedicalExpiration">
     <ng-container matColumnDef="category">
            <th mat-header-cell *matHeaderCellDef> {{'rider.category' | translate}} </th>
            <td mat-cell *matCellDef="let rider"> {{rider.category.name }} </td>
@@ -46,7 +52,7 @@
        <td mat-cell *matCellDef="let rider"> {{rider.lastName}} </td>
    </ng-container>
    <ng-container matColumnDef="validTo">
-    <th mat-header-cell *matHeaderCellDef> Pozostało dni </th>
+    <th mat-header-cell *matHeaderCellDef> {{'main.days-left' | translate}} </th>
     <td mat-cell *matCellDef="let rider" style="text-align: center;"> {{daysRemains(getLatestMedicalCard(rider.medicalCards).validTo!)}}  </td>
 </ng-container>
    <ng-container matColumnDef="actions">
@@ -64,5 +70,9 @@
    <tr mat-row *matRowDef="let rider; columns: columnsToDisplayRiders"></tr>
 </table>
 
-<ng-template #emptyRidersList style="color: #a2ff45">Brak zawodników z kończącycmi się badaniami lekarskimi</ng-template>
+<ng-template #emptyRidersList>
+    <div class="notifications">
+        {{'main.lack-of-upcoming-riders-mc' | translate}}
+    </div>
+    </ng-template>
 

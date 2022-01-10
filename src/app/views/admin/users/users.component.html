@@ -3,15 +3,15 @@
 </div>
 <table mat-table [dataSource]="users">
     <ng-container matColumnDef="id">
-           <th mat-header-cell *matHeaderCellDef> Id </th>
+           <th mat-header-cell *matHeaderCellDef> {{'admin.users.id' | translate}} </th>
            <td mat-cell *matCellDef="let user"> {{user.id }} </td>
    </ng-container>
    <ng-container matColumnDef="username">
-    <th mat-header-cell *matHeaderCellDef> Username </th>
+    <th mat-header-cell *matHeaderCellDef>  {{'admin.users.username' | translate}} </th>
     <td mat-cell *matCellDef="let user"> {{user.username }} </td>
     </ng-container>
 <ng-container matColumnDef="accountStatus">
-    <th mat-header-cell *matHeaderCellDef> Status </th>
+    <th mat-header-cell *matHeaderCellDef>  {{'admin.users.account-status' | translate}} </th>
     <td mat-cell *matCellDef="let user"> {{user.accountStatus }} </td>
 </ng-container>
 

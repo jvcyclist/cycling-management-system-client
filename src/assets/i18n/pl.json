@@ -1,7 +1,8 @@
 {
     "home" : {
         "title": "Witamy na stronie",
-        "system-version" : "Wersja systemu: "
+        "system-version" : "Wersja systemu: ",
+        "welcome" : "Witaj "
     },
 
     "common-actions" : {
@@ -10,13 +11,22 @@
         "add" : "Dodaj",
         "save" : "Zapisz",
         "delete" : "Usuń",
-        "choose-date": "Wybierz datę"
+        "choose-date": "Wybierz datę",
+        "generate-pdf" : "Generuj PDF"
     },
     
     "common" : {
         "actions" : "Akcje",
         "journeys" : "Wyjazdy",
         "calendar" : "Kalendarz"
+    },
+
+    "main" : {
+        "upcoming-races" : "Nadchodzące wyścigi",
+        "upcoming-riders-medical-cards" : "Zawodnicy, którym kończą się badania",
+        "days-left" : "Pozostało dni",
+        "lack-of-near-races" : "Brak nadchodzących wyścigów",
+        "lack-of-upcoming-riders-mc" : "Brak zawodników z kończącycmi się badaniami lekarskimi"
     },
 
     "navigator": {
@@ -76,7 +86,7 @@
     },
 
     "race-navigation" : {
-        "accomodation": "Zakwaterowanie",
+        "accomodation": "Nocleg",
         "riders": "Zawodnicy",
         "summary" : "Podsumowanie",
         "near-services": "Najbliższe usługi"
@@ -132,7 +142,8 @@
         "city" : "Miejscowość" ,
         "description" : "Opis",
         "place" : "Zajęte miejsce",
-        "date" : "Data osiągnięcia"
+        "date" : "Data osiągnięcia",
+        "generate-current-season" : "Generuj Raport Osiągnieć z obecnego sezonu"
     },
 
     "medical-card" : {
@@ -186,9 +197,14 @@
             "emailPlaceHolder" : "Wpisz adres e-mail",
             "firstNamePlaceHolder" : "Wpisz imię użytkownika",
             "lastNamePlaceHolder" : "Wpisz nazwisko użytkownika"
+        },
+        "users" : {
+            "id" : "Id",
+            "username" : "Nazwa użytkownika",
+            "account-status": "Status"
         }
     },
-    
+
     "user": {
         "title" : "Podgląd użytkownika",
         "id" : "Id",
@@ -205,8 +221,15 @@
         "referenceNumber" : "Numer ref",
         "mark": "Marka",
         "model": "Model",
-        "type": "Typ"
+        "type": "Typ",
+        "history" : "Historia użytkowania"
+    },
 
-    }
-    
+    "bike-usage-history" : {
+        "id" : "id",
+        "startDate" : "Data rozp.",
+        "endDate" : "Data zak.",
+        "rider": "Zawodnik"
+    }  
+     
 }

@@ -9,6 +9,7 @@ import {
   ViewChild,
   TemplateRef,
   OnInit,
+  ViewEncapsulation,
 } from '@angular/core';
 import {
   startOfDay,
@@ -51,6 +52,7 @@ const colors: any = {
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./race-calendar.component.css'],
   templateUrl: './race-calendar.component.html',
+  encapsulation: ViewEncapsulation.None
 })
 export class RaceCalendarComponent implements OnInit {
   @ViewChild('modalContent', { static: true }) modalContent!: TemplateRef<any>;
@@ -98,7 +100,8 @@ export class RaceCalendarComponent implements OnInit {
   ngOnInit(): void {
     registerLocaleData(localePl);
     this.raceService.getAllRaces().subscribe(
-      races => races.forEach(race => {
+      races => {
+        races.forEach(race => {
         this.events.push(
           {
             id: race.id,
@@ -114,17 +117,16 @@ export class RaceCalendarComponent implements OnInit {
             },
             draggable: true
           }
-        )
+        )  
       })
+      this.refresh.next(true)
+    }
     )
   }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
-      if (
-        (isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) ||
-        events.length === 0
-      ) {
+      if ((isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) || events.length === 0) {
         this.activeDayIsOpen = false;
       } else {
         this.activeDayIsOpen = true;

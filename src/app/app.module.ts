@@ -72,6 +72,7 @@ import { AccountActivationComponent } from './views/account-activation/account-a
 import { BikeComponent } from './views/bike/bike.component';
 import { BikeUpdateComponent } from './views/bike/bike-update/bike-update.component';
 import { BikeDetailsComponent } from './views/bike/bike-details/bike-details.component';
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -153,9 +154,10 @@ import { BikeDetailsComponent } from './views/bike/bike-details/bike-details.com
     MatDatepickerModule,
     MatNativeDateModule,
     FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    MatSnackBarModule
   ],
-  providers: [ { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }, authInterceptorProviders],
+  providers: [ { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }, authInterceptorProviders, {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

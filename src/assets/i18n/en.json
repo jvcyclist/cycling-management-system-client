@@ -1,40 +1,235 @@
 {
     "home" : {
-        "title": "Welcome on our site"
-    },
-
-    "common" : {
-        "actions": "Actions",
-        "journeys" : "Journeys"
+        "title": "Welcome on site",
+        "system-version" : "System version: ",
+        "welcome" : "Welcome "
     },
 
     "common-actions" : {
-        "back": "Back"
+        "back" : "Back",
+        "edit" : "Edit",
+        "add" : "Add",
+        "save" : "Save",
+        "delete" : "Delete",
+        "choose-date": "Choose date",
+        "generate-pdf" : "Generate PDF"
+    },
+    
+    "common" : {
+        "actions" : "Actions",
+        "journeys" : "Journeys",
+        "calendar" : "Calendar"
+    },
+
+    "main" : {
+        "upcoming-races" : "Upcoming races",
+        "upcoming-riders-medical-cards" : "Riders which has ending expiration of medical cards",
+        "days-left" : "Days left",
+        "lack-of-near-races" : "There are no near races",
+        "lack-of-upcoming-riders-mc" : "There are no riders"
     },
 
     "navigator": {
         "main": "Main",
         "trainings": "Trainings",
         "races": "Races",
-        "training-camps": "Training Camps",
+        "training-camps": "Train Camps",
         "riders": "Riders",
-        "equipment": "Equipment"
+        "bike": "Bikes",
+        "logout": "Logout",
+        "login": "Sign in",
+        "admin": "Admin panel"
     },
 
     "training" : {
+        "id": "Id",
         "type": "Type",
         "date": "Date",
         "kind": "Kind",
         "distance": "Distance",
-        "description": "Description"
+        "description": "Description",
+        "preview" : "Preview"
     },
+
+    "training-camp" : {
+        "id": "Id",
+        "title": "Name",
+        "startDate": "Start date",
+        "endDate": "End date",
+        "preview" : "Preview"
+    },
+
     "equipment" : {
-        "ref_no" : "Ref. No",
+        "id" : "Id",
+        "ref_no" : "Ref No.",
         "mark" : "Mark",
         "model" : "Model",
         "type" : "Type",
         "bikes" : "Bikes",
-        "wheels" : "Wheels"
-    }
+        "wheels" : "Wheels",
+        "preview" : "Preview"
+    },
+    "rider" : {
+        "category" : "Category",
+        "first_name" : "First Name",
+        "last_name" : "Last Name",
+        "license_no" : "License No"
+    },
+    
+    "race" : {
+        "id" : "Id",
+        "title" : "Name",
+        "startDate" : "Start date",
+        "endDate" : "End date",
+        "url" : "Url",
+        "preview" : "Preview"
+    },
 
+    "race-navigation" : {
+        "accomodation": "Accomodation",
+        "riders": "Riders",
+        "summary" : "Summary",
+        "near-services": "Nearest services"
+    },
+
+    "rider-details" : {
+        "id" : "Id",
+        "preview" : "Preview",
+        "first-name" : "First name",
+        "last-name" : "Last name",
+        "category" : "Category",
+        "license-no" : "License number",
+        "personal-data" : "Personal data",
+        "achievements" : "Achievements",
+        "medical-card" : "Medical cards",
+        "address" : "Address",
+        "address-preview": "Preview",
+        "achievements-preview" : "Preview",
+        "achievements-new" : "Add achievement",
+        "medical-cards" : "Preview"
+    },
+
+    "rider-address" : {
+        "id" : "Id" ,
+        "homeNo" : "Building No" ,
+        "zipCode" : "Postal code" ,
+        "street" : "Street" ,
+        "city" : "City" ,
+        "voivodian" : "Voivodeship"
+    },
+
+    "accomodation-address" : {
+        "id" : "Id" ,
+        "buildingNumber" : "Building No" ,
+        "postalCode" : "Postal code" ,
+        "street" : "Street" ,
+        "city" : "City" ,
+        "voivodeship" : "Voivodeship"
+    },
+
+    "race-accomodation" : {
+        "id" : "Id" ,
+        "title" : "Accomodation" ,
+        "date" : "Date range" ,
+        "startDateTime" : "Start date" ,
+        "endDateTime" : "End date" 
+    },
+
+    "achievement" : {
+        "id" : "Id" ,
+        "rider-id" : "Rider Id" ,
+        "range" : "Range" ,
+        "city" : "City" ,
+        "description" : "Description",
+        "place" : "Taken place",
+        "date" : "Achievement date",
+        "generate-current-season" : "Generate achievements summary from current season"
+    },
+
+    "medical-card" : {
+        "id" : "Id" ,
+        "rider-id" : "Rider Id" ,
+        "validFromDate" : "Valid from" ,
+        "validToDate" : "Valid to" ,
+        "comment" : "Comment"
+    },
+
+    "calendar" : {
+        "previous" : "Previous",
+        "today" : "Today",
+        "next" : "Next",
+        "month" : "Month",
+        "week" : "Week",
+        "day" : "Day"
+    },
+    "nearest-services" : {
+        "name" : "Name",
+        "address" : "Address",
+        "isOpen" : "Is open",
+        "rating" : "Average opinions",
+        "userRatingsTotal" : "Amount of opinions",
+        "petrolStation" : {
+            "title" : "Petrol stations"
+        },
+        "hotel" : {
+            "title" : "Hotels"
+        },
+        "parking" : {
+            "title" : "Parkings"
+        },
+        "groceryShop" : {
+            "title" : "Grocery shops"
+        }
+        ,  "restaurant" : {
+            "title" : "Restaurants"
+        }
+    },
+    "login" : {
+        "userNamePlaceHolder" : "Username",
+        "passwordPlaceHolder" : "Password",
+        "login" : "Sign in",
+        "forgot-password" : "Forgotten password?",
+        "remember-me" : "Remember me"
+    },
+    "admin" : {
+        "register-account" : {
+            "loginPlaceHolder" : "Insert login",
+            "emailPlaceHolder" : "Insert mail address",
+            "firstNamePlaceHolder" : "Insert first name of user",
+            "lastNamePlaceHolder" : "Insert last name of user"
+        },
+        "users" : {
+            "id" : "Id",
+            "username" : "Username",
+            "account-status": "Status"
+        }
+    },
+
+    "user": {
+        "title" : "Preview",
+        "id" : "Id",
+        "username" : "Username",
+        "email" : "Email",
+        "firstName" : "First name",
+        "lastName" : "Second name",
+        "accountStatus" : "Account state"
+      },
+
+    "bike": {
+        "id" : "Id",
+        "preview": "Preview",
+        "referenceNumber" : "Reference No.",
+        "mark": "Mark",
+        "model": "Model",
+        "type": "Type",
+        "history" : "Usage history"
+    },
+
+    "bike-usage-history" : {
+        "id" : "id",
+        "startDate" : "Start date",
+        "endDate" : "End date",
+        "rider": "Rider"
+    }  
+     
 }

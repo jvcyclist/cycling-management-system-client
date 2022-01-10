@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Race } from 'src/app/models/race.model';
 import { Rider } from 'src/app/models/rider.model';
 import { RaceService } from 'src/app/services/race.service';
@@ -17,9 +18,12 @@ export class RaceSummaryComponent implements OnInit {
   race: Race = {};
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private location: Location,
-    private raceService: RaceService
+    private raceService: RaceService,
+    private _snackBar: MatSnackBar
+
   ) { }
 
   ngOnInit(): void {
@@ -35,6 +39,11 @@ export class RaceSummaryComponent implements OnInit {
   onBack(): void {
     this.location.back();
   }
-
+  onDelete() {
+    this.raceService.deleteRace(this.race.id!).subscribe(res => {
+      this.router.navigateByUrl('/race')
+      this._snackBar.open('Usunięto wyścig', 'X', { duration: 2500,  panelClass: ['white-snackbar']})
+    })
+  }
 
 }

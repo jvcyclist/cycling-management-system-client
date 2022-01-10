@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { race } from 'rxjs';
 import { RaceMock } from 'src/app/data-mocks/race-mock';
@@ -22,12 +23,13 @@ export class RaceUpdateComponent implements OnInit {
   categoriesList: string[] = []
   chosenCategory: string = '';
 
-  race: Race = {id: 0, title: "", startDate: new Date(Date.now.toString()), endDate: new Date(Date.now.toString()), url: "" }
+  race: Race = {id: 0, title: "", startDate: new Date(Date.now()), endDate: new Date(Date.now()), url: "", categories: [] }
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private locate: Location,
-    private raceService: RaceService
+    private raceService: RaceService,
+    private _snackBar: MatSnackBar
   ) { 
 
   }
@@ -44,7 +46,7 @@ export class RaceUpdateComponent implements OnInit {
             }
           )
         } else {
-          this.race = new Race();
+          this.filterCategories();  
         }
       }
     )
@@ -64,10 +66,12 @@ export class RaceUpdateComponent implements OnInit {
     if(this.id == 0){
       this.raceService.addRace(this.race).subscribe(race => {
         this.router.navigateByUrl('/race/'+ race.id)
+        this._snackBar.open('Utworzono wyścig pomyślnie', 'X', { duration: 2500,  panelClass: ['white-snackbar']})
       })
     } else {
       this.raceService.updateRace(this.race).subscribe(race => {
         this.router.navigateByUrl('/race/'+ race.id)
+        this._snackBar.open('Zaktualizowano wyścig pomyślnie', 'X', { duration: 2500,  panelClass: ['white-snackbar']})
       })
     }
 

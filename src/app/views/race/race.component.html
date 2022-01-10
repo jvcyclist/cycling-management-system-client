@@ -1,7 +1,7 @@
 <div class="btn-group" role="group" aria-label="Basic example">
     <button type="button" class="btn btn-info" routerLink="/races/new">{{'common-actions.add' | translate}}</button>
     <button type="button" class="btn btn-secondary" routerLink="/race/calendar">{{'common.calendar' | translate}}</button>
-    <button type="button" class="btn btn-warning" (click)="processReport()">Generuj PDF</button>
+    <button type="button" class="btn btn-warning" (click)="processReport()">{{'common-actions.generate-pdf' | translate}}</button>
 </div>
 <table id="races" mat-table [dataSource]="races">
     <ng-container matColumnDef="id">

@@ -1,7 +1,7 @@
 
 <div style="text-align: center;">
     <h1>{{title}}</h1>
-    <div *ngIf="currentUser"> Witaj {{currentUser.username}} !</div>
+    <div *ngIf="currentUser"> {{'home.welcome' | translate}} {{currentUser.username}} !</div>
     
 </div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">

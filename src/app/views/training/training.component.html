@@ -1,7 +1,7 @@
 
 <div class="btn-group" role="group" aria-label="Basic example">
     <button type="button" class="btn btn-info" routerLink="/trainings/new">{{'common-actions.add' | translate}}</button>
-    <button type="button" class="btn btn-warning" (click)="processReport()">Generuj PDF</button>
+    <button type="button" class="btn btn-warning" (click)="processReport()">{{'common-actions.generate-pdf' | translate}}</button>
 </div>
 <ng-container [ngSwitch]="trainingArray.length>0">
     <table id="trainings" *ngSwitchCase="true" mat-table [dataSource]="trainingArray">
